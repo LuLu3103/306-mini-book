@@ -338,4 +338,196 @@
         });
     });
   }
+
+  /* ---------------- 顶栏搜索：章节 / 小节 ---------------- */
+  var searchBox = document.getElementById("searchBox");
+  var searchInput = document.getElementById("searchInput");
+  var searchPanel = document.getElementById("searchPanel");
+  var searchIndex = [];
+  var searchActive = -1;
+  var searchTimer = null;
+
+  (function buildSearchIndex() {
+    Object.keys(DATA.lectures).forEach(function (lectureId) {
+      var lecture = DATA.lectures[lectureId];
+      lecture.parts.forEach(function (part) {
+        part.chapters.forEach(function (chapter) {
+          searchIndex.push({
+            lecture: lecture.name,
+            part: part.name,
+            kind: "章",
+            title: chapter.title,
+            chapter: chapter.title,
+            href: chapter.file + "#page=" + chapter.page,
+            srcPage: chapter.srcPage || chapter.page
+          });
+          (chapter.sections || []).forEach(function (sec) {
+            searchIndex.push({
+              lecture: lecture.name,
+              part: part.name,
+              kind: "节",
+              title: sec.title,
+              chapter: chapter.title,
+              href: sec.file + "#page=" + sec.page,
+              srcPage: sec.srcPage || sec.page
+            });
+          });
+        });
+      });
+    });
+  })();
+
+  function searchNorm(text) {
+    return String(text || "").toLowerCase().replace(/\s+/g, "");
+  }
+
+  function searchRun(query) {
+    var raw = String(query || "").trim();
+    if (!raw) return [];
+    var phrases = raw.split(/\s+/).filter(Boolean).map(searchNorm);
+    var whole = searchNorm(raw);
+    var hits = [];
+    for (var i = 0; i < searchIndex.length; i++) {
+      var item = searchIndex[i];
+      var titleNorm = searchNorm(item.title);
+      var hay = titleNorm + searchNorm(item.chapter) + searchNorm(item.part) + searchNorm(item.lecture);
+      var ok = true;
+      for (var p = 0; p < phrases.length; p++) {
+        if (hay.indexOf(phrases[p]) === -1) { ok = false; break; }
+      }
+      if (!ok) continue;
+      var score = 1;
+      if (titleNorm.indexOf(whole) === 0) score = 4;
+      else if (titleNorm.indexOf(whole) > -1) score = 3;
+      else if (searchNorm(item.chapter).indexOf(whole) === 0) score = 2;
+      hits.push({ item: item, score: score, order: i });
+    }
+    hits.sort(function (a, b) { return b.score - a.score || a.order - b.order; });
+    return hits.slice(0, 60).map(function (x) { return x.item; });
+  }
+
+  function highlightTitle(title, query) {
+    var raw = String(query || "").trim().split(/\s+/)[0] || "";
+    if (!raw) return esc(title);
+    var idx = title.toLowerCase().indexOf(raw.toLowerCase());
+    if (idx < 0) return esc(title);
+    return esc(title.slice(0, idx)) + "<mark>" + esc(title.slice(idx, idx + raw.length)) + "</mark>" + esc(title.slice(idx + raw.length));
+  }
+
+  function renderSearch(query) {
+    var value = String(query || "").trim();
+    searchActive = -1;
+    if (!value) { closeSearch(); return; }
+    var results = searchRun(value);
+    if (!results.length) {
+      searchPanel.innerHTML = '<div class="sr-empty">没有找到「' + esc(value) + '」相关的章节</div>';
+    } else {
+      var html = '<div class="search-head">找到 ' + results.length + ' 条结果 · ↑↓ 选择，回车打开</div>';
+      results.forEach(function (item, idx) {
+        html +=
+          '<button class="sr-item" type="button" role="option" aria-selected="false" id="sr-' + idx + '"' +
+          ' data-href="' + esc(item.href) + '" title="' + esc(item.lecture + " · " + item.part + " · 第 " + item.srcPage + " 页") + '">' +
+          '<span class="sr-main">' +
+          '<span class="sr-title">' + highlightTitle(item.title, value) + "</span>" +
+          '<span class="sr-meta">' + esc(item.lecture + " · " + item.part + " · " + item.kind + " · " + item.chapter) + "</span>" +
+          "</span>" +
+          '<span class="sr-page">P' + item.srcPage + "</span>" +
+          "</button>";
+      });
+      searchPanel.innerHTML = html;
+    }
+    searchPanel.hidden = false;
+    searchInput.setAttribute("aria-expanded", "true");
+  }
+
+  function closeSearch() {
+    if (!searchPanel) return;
+    searchPanel.hidden = true;
+    searchPanel.innerHTML = "";
+    searchActive = -1;
+    searchInput.setAttribute("aria-expanded", "false");
+    searchInput.removeAttribute("aria-activedescendant");
+  }
+
+  function openSearchResult(href) {
+    if (!href) return;
+    window.open(href, "_blank", "noopener");
+    closeSearch();
+    searchInput.blur();
+  }
+
+  function moveSearchActive(step) {
+    var items = searchPanel.querySelectorAll(".sr-item");
+    if (!items.length) return;
+    if (searchActive >= 0 && items[searchActive]) {
+      items[searchActive].classList.remove("is-active");
+      items[searchActive].setAttribute("aria-selected", "false");
+    }
+    searchActive = (searchActive + step + items.length) % items.length;
+    var el = items[searchActive];
+    el.classList.add("is-active");
+    el.setAttribute("aria-selected", "true");
+    searchInput.setAttribute("aria-activedescendant", el.id);
+    el.scrollIntoView({ block: "nearest" });
+  }
+
+  if (searchBox && searchInput && searchPanel) {
+    searchInput.addEventListener("input", function () {
+      var value = searchInput.value;
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(function () { renderSearch(value); }, 110);
+    });
+
+    searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        if (searchPanel.hidden && searchInput.value.trim()) renderSearch(searchInput.value);
+        moveSearchActive(1);
+      } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        moveSearchActive(-1);
+      } else if (event.key === "Enter") {
+        var items = searchPanel.querySelectorAll(".sr-item");
+        var target = searchActive >= 0 ? items[searchActive] : items[0];
+        if (target) {
+          event.preventDefault();
+          openSearchResult(target.getAttribute("data-href"));
+        }
+      } else if (event.key === "Escape") {
+        closeSearch();
+        searchInput.blur();
+      }
+    });
+
+    searchInput.addEventListener("focus", function () {
+      if (searchInput.value.trim()) renderSearch(searchInput.value);
+    });
+
+    searchPanel.addEventListener("click", function (event) {
+      var item = event.target.closest ? event.target.closest(".sr-item") : null;
+      if (item) openSearchResult(item.getAttribute("data-href"));
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!searchBox.contains(event.target)) closeSearch();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      var tag = document.activeElement ? document.activeElement.tagName : "";
+      if (event.key === "/" && tag !== "INPUT" && tag !== "TEXTAREA" && !event.metaKey && !event.ctrlKey && !event.altKey) {
+        event.preventDefault();
+        searchInput.focus();
+      }
+    });
+
+    /* 深链接：?q=血压 直接展开搜索结果 */
+    try {
+      var preset = new URLSearchParams(location.search).get("q");
+      if (preset) {
+        searchInput.value = preset;
+        renderSearch(preset);
+      }
+    } catch (err) {}
+  }
+
 })();

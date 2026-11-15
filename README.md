@@ -5,6 +5,7 @@
 - **形态**：纯静态单页，无框架、无构建、无后端；推送即部署到 GitHub Pages
 - **内容**：2 套讲义 / 8 部分 / 56 章 / 424 节 / 1471 页 / 9 册 PDF
 - **打开方式**：点击小节 → 新标签页打开该页所在的 PDF 分块，并定位到对应页码
+- **站内搜索**：顶栏搜索框同时检索「章」与「节」，回车即打开对应页；也支持 `?q=血压` 深链接
 - **体积策略**：PDF 按页切成约 5 MB 的小块（共 127 块），首屏只下载当前这一块
 
 ## 为什么 PDF 要切块
@@ -35,6 +36,7 @@
 ├── index.html                     # 单页：品牌栏、快捷入口、讲义选择、目录面板、使用说明
 ├── sw.js                          # Service Worker：/pdf/chunks/ 的持久缓存
 ├── .nojekyll                      # 关闭 Jekyll，按原样发布静态文件
+├── .github/workflows/pages.yml    # push 到 main 自动部署到 GitHub Pages
 ├── assets/
 │   ├── css/style.css              # 设计令牌、组件、响应式、动效降级
 │   ├── js/app.js                  # 目录渲染、展开、深链接、预取、SW 注册、弹层
@@ -59,7 +61,9 @@
 
 站点是纯静态文件，仓库根目录就是站点根目录，**不需要 Node、不需要构建**。
 
-### 方式一：分支部署（推荐，零配置）
+当前仓库已启用 **GitHub Actions** 部署：`.github/workflows/pages.yml` 会在 push 到 `main` 时自动发布（Settings → Pages → Source 需为 **GitHub Actions**）。
+
+### 方式一：分支部署（零配置，备选）
 
 1. 仓库 **Settings → Pages**
 2. **Source** 选 **Deploy from a branch**
@@ -68,7 +72,7 @@
 
 之后每次 `git push` 到 `main`，Pages 都会自动重新发布，不需要额外配置。
 
-### 方式二：GitHub Actions 自动部署（可选）
+### 方式二：GitHub Actions 自动部署（当前采用）
 
 如果希望走 Actions，把下面内容保存为 `.github/workflows/pages.yml` 并提交（注意：推送这个文件要求令牌具备 **workflow** 权限，或直接在 GitHub 网页上创建该文件），再把 Pages 的 Source 改成 **GitHub Actions**：
 
@@ -118,6 +122,8 @@ python -m http.server 8099
 - **跳转**：点小节 → 打开讲义对应页；章内没有小节时会提示「本章未细分小节，直接打开第 N 页」。
 - **页码含义**：目录里的 `P12` 与跳转参数都是 **PDF 阅读器页码**，不是纸书印刷页码。
 - **深链接**：`?lecture=xizong`、`?lecture=kuangbei&all=1`（选中讲义并全部展开），方便分享。
+- **站内搜索**：顶栏输入「血压」「肺栓塞」等关键词即可定位到章 / 节；`Enter` 打开第一条，`↑↓` 选择，`/` 快速聚焦，`Esc` 关闭。
+- **搜索深链接**：`?q=血压` 打开页面即展示搜索结果。
 
 ## 维护：改目录 / 换 PDF
 

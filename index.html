@@ -27,14 +27,27 @@
       </span>
     </a>
 
-    <button class="help-btn" type="button" id="helpBtn" aria-haspopup="dialog" aria-controls="helpDialog">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M9.7 9.3a2.4 2.4 0 0 1 4.7.7c0 1.6-2.4 2.1-2.4 3.6" />
-        <path d="M12 17h.01" />
-      </svg>
-      <span>使用说明</span>
-    </button>
+    <div class="topbar-right">
+      <div class="search" id="searchBox">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <circle cx="10.8" cy="10.8" r="6.4" />
+          <path d="m15.6 15.6 4.2 4.2" />
+        </svg>
+        <input class="search-input" id="searchInput" type="search" placeholder="搜索章节 / 小节" aria-label="搜索章节或小节"
+               autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="searchPanel" aria-autocomplete="list" />
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+        <div class="search-panel" id="searchPanel" role="listbox" aria-label="搜索结果" hidden></div>
+      </div>
+
+      <button class="help-btn" type="button" id="helpBtn" aria-label="使用说明" aria-haspopup="dialog" aria-controls="helpDialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M9.7 9.3a2.4 2.4 0 0 1 4.7.7c0 1.6-2.4 2.1-2.4 3.6" />
+          <path d="M12 17h.01" />
+        </svg>
+        <span>使用说明</span>
+      </button>
+    </div>
   </div>
 </header>
 

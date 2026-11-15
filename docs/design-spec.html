@@ -851,7 +851,7 @@
         <text x="126" y="44" font-size="11" fill="#DBEAFE" letter-spacing="1">LEVEL 01 · 顶部品牌栏</text>
         <text x="126" y="66" font-size="16" font-weight="700" fill="#FFFFFF">西综学习中心</text>
         <text x="774" y="44" text-anchor="end" font-size="11" fill="#DBEAFE">sticky · 毛玻璃 · 高度 64px</text>
-        <text x="774" y="64" text-anchor="end" font-size="12" fill="#FFFFFF">品牌标识 / 站名 / 使用说明</text>
+        <text x="774" y="64" text-anchor="end" font-size="12" fill="#FFFFFF">品牌标识 / 站名 / 站内搜索 / 使用说明</text>
 
         <line x1="450" y1="84" x2="450" y2="112" stroke="#93B8FB" stroke-width="2" marker-end="url(#iaArrow)"></line>
         <text x="462" y="103" font-size="10" fill="#64748B">向下滚动仍可见</text>
@@ -1136,6 +1136,23 @@
           </tr>
 
           <tr>
+            <th scope="row" rowspan="3" class="comp-name">顶栏搜索<span class="comp-sub">.search</span></th>
+            <td><span class="state state-default">默认</span></td>
+            <td>258px 胶囊输入框，白底 1px #E7EEFB 边框，左侧放大镜 #94A3B8，右侧 <code>/</code> 快捷键提示。</td>
+            <td><code>.search-input</code> 圆角 999px、高 34px；手机端宽度自适应并隐藏 <code>/</code> 提示与帮助按钮文字。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-hover">聚焦</span></td>
+            <td>边框转 #BFD7FE，外圈 3px 主蓝 12% 光晕，放大镜转主蓝，<code>/</code> 提示淡出。</td>
+            <td><code>.search-input:focus</code> 的 <code>box-shadow</code>；<code>.search:focus-within</code> 同时改图标与 <code>.search-kbd</code> 透明度。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-active">输入中</span></td>
+            <td>下拉面板 400px / 圆角 14px / 最大 62vh；结果项为「标题 + 讲义 · 科目 · 章 + P 页码胶囊」，命中词浅蓝高亮；无结果时显示空提示。</td>
+            <td>结果来自 <code>window.TOC_DATA</code> 的扁平索引，含「章」与「节」；<code>↑↓</code> 移动、<code>Enter</code> 打开第一条、<code>Esc</code> 关闭、<code>/</code> 聚焦，点击结果打开对应 PDF 分块。</td>
+          </tr>
+
+          <tr>
             <th scope="row" rowspan="4" class="comp-name">讲义卡<span class="comp-sub">.lec-card</span></th>
             <td><span class="state state-default">默认</span></td>
             <td>白卡、44px 浅蓝图标、右侧 26px 圆形箭头；按钮本身无边框，靠卡片边界识别。</td>
@@ -1271,6 +1288,11 @@
         <h3>使用说明弹层</h3>
         <p>顶部“使用说明”打开原生 <code>dialog</code>，点击关闭按钮、点击遮罩或按 Esc 关闭；浏览器不支持 <code>showModal()</code> 时自动隐藏该按钮。</p>
       </div>
+      <div class="flow-step">
+        <span class="n" aria-hidden="true">07</span>
+        <h3>顶栏搜索</h3>
+        <p>在顶栏输入关键词即可同时检索「章」与「节」，结果按命中位置排序并显示所属讲义 / 科目 / 章；点击或回车直接打开对应 PDF 分块页码。支持 <code>/</code> 聚焦、<code>↑↓</code> 选择、<code>Esc</code> 关闭，以及 <code>?q=关键词</code> 深链接。</p>
+      </div>
     </div>
 
     <div class="callout" style="margin-top:16px">
@@ -1342,6 +1364,12 @@ index.html?lecture=kuangbei&amp;all=1</pre>
             <img src="./screenshots/desktop-toc.png" alt="桌面端选中西综讲义后的目录：蓝色选中卡片、目录统计信息、部分分组与章节列表。" loading="lazy">
           </a>
           <figcaption><strong>desktop-toc.png</strong>选中西综讲义。目录头部显示 5 部分 · 37 章 · 244 节 · 1288 页。</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="./screenshots/desktop-search.png" target="_blank" rel="noopener" aria-label="查看顶栏搜索大图">
+            <img src="./screenshots/desktop-search.png" alt="桌面端顶栏搜索：输入“血压”后下拉面板列出 6 条相关章节与页码。" loading="lazy">
+          </a>
+          <figcaption><strong>desktop-search.png</strong>顶栏搜索「血压」。命中章/节并显示所属讲义、科目与页码。</figcaption>
         </figure>
         <figure class="shot">
           <a href="./screenshots/desktop-expanded.png" target="_blank" rel="noopener" aria-label="查看桌面端展开状态大图">
