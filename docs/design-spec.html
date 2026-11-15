@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="西综学习中心（306-mini-book）设计交付文档：定位、信息架构、色彩、字体、组件状态、交互与响应式说明。">
+<title>西综学习中心 · 设计交付文档</title>
+<style>
+  :root {
+    --blue: #2563EB;
+    --blue-deep: #1D4ED8;
+    --blue-soft: #EFF6FF;
+    --ink: #0F172A;
+    --ink-soft: #334155;
+    --muted: #64748B;
+    --line: #E7EEFB;
+    --bg: #F7FAFF;
+    --white: #FFFFFF;
+    --blue-200: #BFD7FE;
+    --radius-card: 16px;
+    --radius-panel: 18px;
+    --shadow-xs: 0 1px 2px rgba(15, 23, 42, .04);
+    --shadow-card: 0 18px 44px -30px rgba(37, 99, 235, .35), 0 2px 6px rgba(15, 23, 42, .03);
+    --shadow-hover: 0 14px 30px -16px rgba(37, 99, 235, .32), 0 2px 6px rgba(15, 23, 42, .04);
+    --ease: cubic-bezier(.2, .7, .3, 1);
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+    --wrap: 1080px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background:
+      radial-gradient(760px 380px at 7% -8%, rgba(37, 99, 235, .14), transparent 62%),
+      radial-gradient(620px 320px at 94% -10%, rgba(56, 189, 248, .13), transparent 60%),
+      var(--bg);
+    background-attachment: fixed;
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, p, ul, ol, dl, dd, figure { margin: 0; }
+  ul, ol { padding: 0; }
+  img { max-width: 100%; }
+  a { color: var(--blue-deep); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--blue); }
+  code, pre { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+  :focus-visible { outline: 3px solid rgba(37, 99, 235, .55); outline-offset: 3px; border-radius: 8px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  .skip-link {
+    position: fixed; top: 10px; left: 50%; z-index: 100;
+    transform: translate(-50%, -160%);
+    padding: 9px 16px; border-radius: 999px;
+    background: var(--blue-deep); color: #fff; font-size: 13px; font-weight: 600;
+    text-decoration: none; box-shadow: var(--shadow-hover);
+    transition: transform .2s var(--ease);
+  }
+  .skip-link:focus-visible { transform: translate(-50%, 0); color: #fff; }
+
+  /* ---------- 顶部锚点导航 ---------- */
+  .doc-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 255, 255, .84);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    backdrop-filter: blur(16px) saturate(160%);
+    border-bottom: 1px solid var(--line);
+  }
+  .doc-nav-inner {
+    max-width: var(--wrap); margin: 0 auto;
+    min-height: 60px; padding: 9px 24px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .doc-brand {
+    display: inline-flex; align-items: center; gap: 9px;
+    flex: none; color: var(--ink); text-decoration: none;
+    font-size: 13.5px; font-weight: 700; letter-spacing: .1px;
+  }
+  .brand-mark {
+    width: 32px; height: 32px; display: grid; place-items: center;
+    border-radius: 10px; color: #fff;
+    background: linear-gradient(140deg, #3B82F6 0%, var(--blue) 48%, var(--blue-deep) 100%);
+    box-shadow: 0 7px 16px -8px rgba(37, 99, 235, .7);
+  }
+  .brand-mark svg { width: 18px; height: 18px; }
+  .brand-text { white-space: nowrap; }
+  .brand-text em {
+    display: inline-block; margin-left: 7px; padding: 2px 7px;
+    border-radius: 999px; background: var(--blue-soft); color: var(--blue-deep);
+    font-style: normal; font-size: 10.5px; font-weight: 700; letter-spacing: .3px;
+    vertical-align: 2px;
+  }
+  .doc-version {
+    flex: none; color: var(--muted); font-size: 11px;
+    padding-left: 14px; border-left: 1px solid var(--line); white-space: nowrap;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 2px;
+    margin-left: auto; min-width: 0;
+  }
+  .nav-links a {
+    flex: none; padding: 7px 10px; border-radius: 999px;
+    color: var(--muted); text-decoration: none;
+    font-size: 12px; font-weight: 600; white-space: nowrap;
+    transition: color .18s var(--ease), background-color .18s var(--ease);
+  }
+  .nav-links a:hover { color: var(--blue-deep); background: var(--blue-soft); }
+
+  /* ---------- Hero ---------- */
+  .hero { max-width: var(--wrap); margin: 0 auto; padding: 54px 24px 16px; }
+  .hero-inner {
+    display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr);
+    gap: 30px; align-items: stretch;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--blue-deep); font-size: 11.5px; font-weight: 700;
+    letter-spacing: 1.4px; text-transform: uppercase;
+  }
+  .pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--blue); box-shadow: 0 0 0 4px rgba(37, 99, 235, .11);
+  }
+  .hero h1 {
+    margin-top: 18px;
+    font-size: clamp(36px, 5.2vw, 56px);
+    line-height: 1.1; letter-spacing: -.035em; font-weight: 800;
+  }
+  .hero h1 span {
+    color: var(--blue-deep);
+    background: linear-gradient(100deg, var(--blue) 0%, var(--blue-deep) 60%, #3B82F6 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .lede {
+    max-width: 640px; margin-top: 20px;
+    color: var(--ink-soft); font-size: 16px; line-height: 1.75;
+  }
+  .lede strong { color: var(--ink); font-weight: 700; }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 11px; border: 1px solid var(--line); border-radius: 999px;
+    background: rgba(255, 255, 255, .82); color: var(--ink-soft);
+    font-size: 11.5px; font-weight: 600; box-shadow: var(--shadow-xs);
+  }
+  .chip::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #93B8FB; }
+  .hero-note { margin-top: 16px; color: var(--muted); font-size: 11.5px; }
+  .hero-card {
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    padding: 21px 21px 17px;
+    border: 1px solid var(--line); border-radius: var(--radius-panel);
+    background: rgba(255, 255, 255, .9);
+    box-shadow: var(--shadow-card);
+  }
+  .hero-card::before {
+    content: ""; position: absolute; inset: 0 0 auto; height: 4px;
+    background: linear-gradient(90deg, #3B82F6, var(--blue) 48%, var(--blue-deep));
+  }
+  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .card-top > span:first-child {
+    color: var(--muted); font-size: 10.5px; font-weight: 700;
+    letter-spacing: 1.2px; text-transform: uppercase;
+  }
+  .mini-badge {
+    padding: 3px 8px; border-radius: 999px;
+    background: var(--blue-soft); color: var(--blue-deep);
+    font-size: 10px; font-weight: 700;
+  }
+  .card-title { margin-top: 12px; font-size: 18px; font-weight: 800; letter-spacing: -.01em; }
+  .task-list { list-style: none; margin-top: 14px; display: grid; gap: 11px; }
+  .task-list li { display: grid; grid-template-columns: 26px 1fr; gap: 9px; align-items: start; }
+  .task-list .n {
+    display: grid; place-items: center; width: 26px; height: 26px;
+    border-radius: 8px; background: var(--blue-soft); color: var(--blue);
+    font-size: 10px; font-weight: 800; font-variant-numeric: tabular-nums;
+  }
+  .task-list strong { display: block; font-size: 12.5px; line-height: 1.4; }
+  .task-list p { color: var(--muted); font-size: 11.5px; line-height: 1.55; margin-top: 2px; }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line);
+  }
+  .hero-meta span {
+    padding: 3px 8px; border-radius: 6px;
+    background: #F8FAFC; color: var(--muted); font-size: 10px; font-weight: 600;
+  }
+
+  /* ---------- 文档主体 ---------- */
+  .doc-wrap { max-width: var(--wrap); margin: 0 auto; padding: 24px 24px 64px; }
+  .section-card {
+    position: relative;
+    padding: clamp(24px, 4.2vw, 44px);
+    border: 1px solid var(--line); border-radius: var(--radius-panel);
+    background: var(--white); box-shadow: var(--shadow-xs);
+    scroll-margin-top: 84px;
+  }
+  .section-card + .section-card { margin-top: 22px; }
+  .section-card:target { border-color: var(--blue-200); box-shadow: var(--shadow-card); }
+  .section-head {
+    display: grid; grid-template-columns: auto minmax(0, 1fr);
+    gap: 15px; align-items: start;
+    padding-bottom: 18px; margin-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .sec-num {
+    display: grid; place-items: center;
+    width: 44px; height: 44px; border-radius: 13px;
+    background: linear-gradient(140deg, #3B82F6, var(--blue) 55%, var(--blue-deep));
+    color: #fff; font-size: 12px; font-weight: 800;
+    letter-spacing: .5px; box-shadow: 0 9px 18px -10px rgba(37, 99, 235, .75);
+    font-variant-numeric: tabular-nums;
+  }
+  .sec-kicker {
+    color: var(--muted); font-size: 10px; font-weight: 700;
+    letter-spacing: 1.25px; text-transform: uppercase;
+  }
+  .section-head h2 {
+    margin-top: 2px;
+    font-size: clamp(22px, 3vw, 27px); line-height: 1.3;
+    letter-spacing: -.02em; font-weight: 800;
+  }
+  .section-lead {
+    max-width: 820px; margin-bottom: 24px;
+    color: var(--ink-soft); font-size: 14.5px; line-height: 1.8;
+  }
+  .section-lead strong { color: var(--ink); }
+  .prose h3 {
+    margin: 0 0 8px; font-size: 14px; font-weight: 800; letter-spacing: .1px;
+  }
+  .prose h3:not(:first-child) { margin-top: 22px; }
+  .prose p { color: var(--ink-soft); font-size: 13.5px; line-height: 1.8; }
+  .prose p + p { margin-top: 8px; }
+
+  .overview-grid {
+    display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+    gap: 26px; align-items: start;
+  }
+  .bullets { list-style: none; display: grid; gap: 10px; margin-top: 4px; }
+  .bullets li { position: relative; padding-left: 20px; color: var(--ink-soft); font-size: 13.5px; }
+  .bullets li::before {
+    content: ""; position: absolute; left: 2px; top: .68em;
+    width: 7px; height: 7px; border-radius: 2px;
+    background: linear-gradient(140deg, #60A5FA, var(--blue-deep));
+  }
+  .bullets li strong { color: var(--ink); }
+  .quote-card {
+    padding: 22px; border: 1px solid var(--line); border-radius: var(--radius-card);
+    background: linear-gradient(180deg, #FBFDFF, #F8FBFF);
+  }
+  .quote-mark {
+    display: grid; place-items: center;
+    width: 34px; height: 34px; border-radius: 10px;
+    background: var(--blue-soft); color: var(--blue);
+    font-size: 22px; line-height: 1; font-weight: 800;
+  }
+  .quote-card blockquote {
+    margin: 14px 0 0; color: var(--ink); font-size: 16px; line-height: 1.65; font-weight: 700;
+  }
+  .quote-card cite {
+    display: block; margin-top: 12px; color: var(--muted);
+    font-size: 11.5px; font-style: normal; line-height: 1.6;
+  }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px; margin-top: 24px;
+  }
+  .stat {
+    position: relative; overflow: hidden;
+    padding: 15px 16px; border: 1px solid var(--line); border-radius: 13px;
+    background: #FBFDFF;
+  }
+  .stat::after {
+    content: ""; position: absolute; right: -14px; bottom: -22px;
+    width: 70px; height: 70px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, .09), transparent 68%);
+  }
+  .stat strong {
+    display: block; color: var(--blue-deep); font-size: 26px; line-height: 1.15;
+    font-weight: 800; letter-spacing: -.03em; font-variant-numeric: tabular-nums;
+  }
+  .stat span { display: block; margin-top: 2px; color: var(--ink-soft); font-size: 11.5px; font-weight: 700; }
+  .stat em { display: block; margin-top: 2px; color: var(--muted); font-size: 10.5px; font-style: normal; }
+
+  .callout {
+    display: grid; grid-template-columns: auto 1fr; gap: 12px;
+    margin-top: 22px; padding: 14px 16px;
+    border: 1px solid #D8E6FF; border-radius: 12px;
+    background: var(--blue-soft);
+  }
+  .callout-icon {
+    display: grid; place-items: center; width: 24px; height: 24px;
+    border-radius: 7px; background: #fff; color: var(--blue); font-size: 12px; font-weight: 800;
+  }
+  .callout p { color: #1E3A8A; font-size: 12.5px; line-height: 1.65; }
+  .callout strong { color: var(--blue-deep); }
+
+  .principle-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px; margin-top: 22px;
+  }
+  .principle {
+    padding: 16px; border: 1px solid var(--line); border-radius: 13px;
+    background: #fff;
+  }
+  .principle span { color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .8px; }
+  .principle h3 { margin-top: 6px; font-size: 13px; font-weight: 800; }
+  .principle p { margin-top: 4px; color: var(--muted); font-size: 11.5px; line-height: 1.6; }
+
+  /* ---------- 信息架构 SVG ---------- */
+  .svg-frame {
+    margin-top: 6px; padding: 12px;
+    border: 1px solid var(--line); border-radius: var(--radius-card);
+    background:
+      linear-gradient(rgba(37, 99, 235, .035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 99, 235, .035) 1px, transparent 1px),
+      #FBFDFF;
+    background-size: 28px 28px, 28px 28px, auto;
+    overflow: hidden;
+  }
+  .arch-svg { display: block; width: 100%; height: auto; }
+  .arch-svg text { font-family: var(--font); }
+  .arch-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; }
+  .legend-item { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 11px; }
+  .legend-dot { width: 7px; height: 7px; border-radius: 2px; background: var(--blue); }
+  .legend-dot.soft { background: var(--blue-200); }
+  .legend-dot.line { width: 14px; height: 2px; border-radius: 1px; background: #93B8FB; }
+
+  /* ---------- 色彩 ---------- */
+  .swatch-grid {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px; margin-top: 4px;
+  }
+  .swatch {
+    overflow: hidden; border: 1px solid var(--line); border-radius: 14px;
+    background: #fff;
+  }
+  .swatch-color {
+    position: relative; height: 88px;
+    display: flex; align-items: flex-start; justify-content: flex-end;
+    padding: 9px;
+  }
+  .swatch-color.tone-light { border-bottom: 1px solid var(--line); }
+  .swatch-role {
+    padding: 2px 7px; border-radius: 999px;
+    background: rgba(255, 255, 255, .88); color: var(--blue-deep);
+    font-size: 9.5px; font-weight: 800; letter-spacing: .2px;
+  }
+  .swatch-body { padding: 11px 12px 12px; }
+  .swatch-line { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; }
+  .swatch-line strong {
+    color: var(--ink); font-size: 12px; font-weight: 800;
+    letter-spacing: .2px; font-variant-numeric: tabular-nums;
+  }
+  .swatch-line span { color: var(--muted); font-size: 10px; white-space: nowrap; }
+  .swatch-body p { margin-top: 5px; color: var(--muted); font-size: 10.5px; line-height: 1.55; }
+
+  .contrast-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px; margin-top: 18px;
+  }
+  .contrast-card {
+    padding: 18px; border: 1px solid var(--line); border-radius: 14px;
+    background: #FBFDFF;
+  }
+  .ratio {
+    display: inline-block; color: var(--blue-deep);
+    font-size: 27px; line-height: 1; font-weight: 800;
+    letter-spacing: -.04em; font-variant-numeric: tabular-nums;
+  }
+  .contrast-card p { margin-top: 8px; color: var(--muted); font-size: 11.5px; line-height: 1.65; }
+  .contrast-sample {
+    margin-top: 10px; padding: 9px 11px;
+    border: 1px solid var(--line); border-radius: 8px; background: #fff;
+    font-size: 13px;
+  }
+  .contrast-sample.ink { color: var(--ink); font-weight: 700; }
+  .contrast-sample.muted { color: var(--muted); }
+  .pass {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 10px; padding: 3px 8px; border-radius: 999px;
+    background: #ECFDF5; color: #047857; font-size: 10px; font-weight: 700;
+  }
+  .pass::before { content: "✓"; font-size: 10px; }
+  .gradient-note {
+    display: flex; align-items: center; gap: 14px;
+    margin-top: 16px; padding: 14px;
+    border: 1px solid var(--line); border-radius: 13px; background: #fff;
+  }
+  .gradient-sample {
+    flex: none; width: 120px; height: 44px; border-radius: 10px;
+    background: linear-gradient(135deg, #3B82F6 0%, var(--blue) 42%, var(--blue-deep) 100%);
+    box-shadow: 0 10px 20px -12px rgba(37, 99, 235, .65);
+  }
+  .gradient-note strong { display: block; font-size: 12px; font-weight: 800; }
+  .gradient-note p { margin-top: 2px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+
+  /* ---------- 表格通用 ---------- */
+  .table-wrap {
+    margin-top: 14px; border: 1px solid var(--line);
+    border-radius: 13px; overflow-x: auto; background: #fff;
+  }
+  table { width: 100%; border-collapse: collapse; min-width: 620px; font-size: 12px; }
+  caption { text-align: left; }
+  th, td {
+    padding: 11px 13px; border-bottom: 1px solid var(--line);
+    text-align: left; vertical-align: top;
+  }
+  thead th {
+    background: #F8FBFF; color: var(--ink-soft);
+    font-size: 10.5px; font-weight: 800; letter-spacing: .3px;
+    white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:hover td { background: #FCFDFF; }
+  td strong { color: var(--ink); font-weight: 700; }
+  td code, p code, .code-inline {
+    padding: 1px 5px; border-radius: 4px;
+    background: var(--blue-soft); color: var(--blue-deep);
+    font-size: 10.5px; white-space: nowrap;
+  }
+
+  /* ---------- 字体 ---------- */
+  .fontstack {
+    margin-top: 4px; padding: 15px 16px;
+    border: 1px solid var(--line); border-radius: 13px;
+    background: #0F172A; color: #DBEAFE;
+    font-size: 11px; line-height: 1.85; white-space: pre-wrap; word-break: break-word;
+    overflow-x: auto;
+  }
+  .fontstack span { color: #93C5FD; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .overview-grid { grid-template-columns: 1fr; }
+    .swatch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 700px) {
+    .doc-nav-inner { min-height: 54px; padding: 7px 14px; gap: 8px; }
+    .doc-version { display: none; }
+    .brand-text { display: none; }
+    .nav-links { overflow-x: auto; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { padding: 6px 8px; font-size: 11px; }
+    .hero { padding: 36px 16px 10px; }
+    .hero h1 { font-size: clamp(34px, 10vw, 46px); }
+    .doc-wrap { padding: 18px 16px 44px; }
+    .section-head { grid-template-columns: 38px minmax(0, 1fr); gap: 11px; }
+    .sec-num { width: 38px; height: 38px; border-radius: 11px; font-size: 11px; }
+    .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .principle-grid, .contrast-grid { grid-template-columns: 1fr; }
+    .gradient-note { align-items: flex-start; flex-direction: column; }
+    .gradient-sample { width: 100%; }
+    .swatch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 420px) {
+    .swatch-grid { grid-template-columns: 1fr; }
+    .hero-chips { gap: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important; scroll-behavior: auto !important;
+    }
+  }
+  @media print {
+    body { background: #fff; }
+    .doc-nav, .skip-link { display: none; }
+    .doc-wrap { max-width: none; padding: 0; }
+    .section-card, .hero-card { box-shadow: none; }
+    .section-card { break-inside: avoid; }
+  }
+  /* ---------- 04 字体 ---------- */
+  .block-title { margin: 26px 0 8px; font-size: 15px; font-weight: 800; letter-spacing: .1px; }
+  .block-title:first-child { margin-top: 0; }
+  .type-layout {
+    display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 20px; align-items: start; margin-top: 16px;
+  }
+  .type-sample-card {
+    padding: 18px; border: 1px solid var(--line); border-radius: 14px;
+    background: linear-gradient(180deg, #FBFDFF, #FFFFFF);
+  }
+  .sample-top {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    padding-bottom: 10px; margin-bottom: 12px; border-bottom: 1px solid var(--line);
+  }
+  .sample-top span:first-child {
+    color: var(--muted); font-size: 9.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .token-pill {
+    padding: 2px 7px; border-radius: 999px;
+    background: var(--blue-soft); color: var(--blue-deep);
+    font-size: 9.5px; font-weight: 700; white-space: nowrap;
+  }
+  .sample-line {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+    padding: 7px 0; border-bottom: 1px dashed #EEF3FC;
+  }
+  .sample-line:last-child { border-bottom: 0; }
+  .sample-line em {
+    flex: none; color: var(--muted); font-size: 9.5px;
+    font-style: normal; font-variant-numeric: tabular-nums;
+  }
+  .sample-brand { font-size: 16.5px; font-weight: 700; line-height: 1.25; letter-spacing: .2px; }
+  .sample-heading { font-size: 15px; font-weight: 700; line-height: 1.6; }
+  .sample-body { font-size: 14px; line-height: 1.6; }
+  .sample-chapter { font-size: 14px; font-weight: 600; line-height: 1.6; }
+  .sample-section { font-size: 13px; line-height: 1.6; color: var(--ink-soft); }
+  .sample-muted { font-size: 12px; line-height: 1.6; color: var(--muted); }
+  .sample-page { font-size: 11.5px; font-weight: 600; line-height: 1.6; color: var(--blue); }
+  .token-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px; margin-top: 12px;
+  }
+  .token {
+    padding: 11px 12px; border: 1px solid var(--line); border-radius: 10px;
+    background: #FBFDFF;
+  }
+  .token strong { display: block; color: var(--blue-deep); font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .token span { display: block; margin-top: 1px; color: var(--muted); font-size: 10px; line-height: 1.5; }
+
+  /* ---------- 05 组件 ---------- */
+  .component-table { min-width: 880px; }
+  .component-table th.comp-name {
+    width: 106px; background: #FBFDFF;
+    color: var(--ink); font-size: 12px; font-weight: 800;
+    vertical-align: middle; border-right: 1px solid var(--line);
+  }
+  .comp-sub {
+    display: block; margin-top: 3px; color: var(--muted);
+    font-size: 9.5px; font-weight: 500; line-height: 1.45;
+  }
+  .state {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px; border-radius: 999px;
+    font-size: 9.5px; font-weight: 800; white-space: nowrap;
+  }
+  .state::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+  .state-default { background: #F1F5F9; color: #475569; }
+  .state-hover { background: var(--blue-soft); color: var(--blue-deep); }
+  .state-selected { background: var(--blue); color: #fff; }
+  .state-selected::before, .state-open::before { background: #fff; }
+  .state-open { background: var(--blue-deep); color: #fff; }
+  .state-empty { background: #F8FAFC; color: var(--muted); border: 1px dashed #CBD5E1; }
+  .motion-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px; margin-top: 18px;
+  }
+  .motion {
+    padding: 13px 14px; border: 1px solid var(--line); border-radius: 11px;
+    background: #FBFDFF;
+  }
+  .motion span { color: var(--muted); font-size: 9.5px; font-weight: 700; letter-spacing: .6px; }
+  .motion strong { display: block; margin-top: 2px; color: var(--ink); font-size: 13px; font-weight: 800; }
+  .motion p { margin-top: 2px; color: var(--muted); font-size: 10.5px; line-height: 1.55; }
+  .mini-note {
+    margin-top: 16px; padding: 13px 15px;
+    border: 1px dashed #D8E6FF; border-radius: 11px;
+    background: #FCFDFF; color: var(--ink-soft); font-size: 11.5px; line-height: 1.7;
+  }
+  .mini-note strong { color: var(--blue-deep); }
+
+  /* ---------- 06 交互与适配 ---------- */
+  .flow-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px; margin-top: 16px;
+  }
+  .flow-step {
+    position: relative; padding: 15px 15px 15px 50px;
+    border: 1px solid var(--line); border-radius: 12px; background: #FBFDFF;
+  }
+  .flow-step .n {
+    position: absolute; left: 14px; top: 14px;
+    display: grid; place-items: center; width: 25px; height: 25px;
+    border-radius: 8px; background: var(--blue-soft); color: var(--blue);
+    font-size: 9.5px; font-weight: 800;
+  }
+  .flow-step h3 { font-size: 12.5px; font-weight: 800; line-height: 1.4; }
+  .flow-step p { margin-top: 3px; color: var(--muted); font-size: 10.8px; line-height: 1.6; }
+  .code-block {
+    margin-top: 16px; padding: 15px 17px;
+    border: 1px solid #1E3A8A; border-radius: 13px;
+    background: #0F172A; color: #DBEAFE;
+    font-size: 11px; line-height: 1.85; overflow-x: auto;
+  }
+  .code-block strong { color: #93C5FD; font-weight: 700; }
+  .code-block .cmt { color: #94A3B8; }
+  .deep-link-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px; margin-top: 12px;
+  }
+  .deep-link {
+    padding: 13px 14px; border: 1px solid var(--line); border-radius: 11px;
+    background: #fff;
+  }
+  .deep-link code {
+    display: inline-block; padding: 3px 7px; border-radius: 5px;
+    background: var(--blue-soft); color: var(--blue-deep);
+    font-size: 11px; font-weight: 700; white-space: nowrap;
+  }
+  .deep-link p { margin-top: 5px; color: var(--muted); font-size: 10.8px; line-height: 1.6; }
+  .bp-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 11px; margin-top: 16px;
+  }
+  .bp-card {
+    padding: 16px; border: 1px solid var(--line); border-radius: 12px;
+    background: #FBFDFF;
+  }
+  .bp-card .bp-range {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    background: var(--blue-soft); color: var(--blue-deep);
+    font-size: 10px; font-weight: 800; font-variant-numeric: tabular-nums;
+  }
+  .bp-card h3 { margin-top: 9px; font-size: 12.5px; font-weight: 800; }
+  .bp-card ul { list-style: none; margin-top: 6px; display: grid; gap: 4px; }
+  .bp-card li { position: relative; padding-left: 12px; color: var(--muted); font-size: 10.5px; line-height: 1.55; }
+  .bp-card li::before { content: ""; position: absolute; left: 1px; top: .62em; width: 4px; height: 4px; border-radius: 50%; background: #93B8FB; }
+  .shot-group { margin-top: 18px; }
+  .shot-group + .shot-group { margin-top: 24px; }
+  .shot-group h3 {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 800;
+  }
+  .shot-group h3::before { content: ""; width: 3px; height: 14px; border-radius: 2px; background: linear-gradient(180deg, #3B82F6, var(--blue-deep)); }
+  .shots { display: grid; gap: 12px; margin-top: 10px; }
+  .shots-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .shots-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; }
+  .shot {
+    overflow: hidden; border: 1px solid var(--line); border-radius: 13px;
+    background: #FBFDFF;
+  }
+  .shot > a { display: block; background: #EEF4FF; }
+  .shot img { display: block; width: 100%; height: auto; }
+  .shot figcaption {
+    padding: 10px 11px 11px; color: var(--muted);
+    font-size: 10.5px; line-height: 1.55;
+  }
+  .shot figcaption strong { display: block; color: var(--ink); font-size: 11px; font-weight: 800; margin-bottom: 1px; }
+  .a11y-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px; margin-top: 16px;
+  }
+  .a11y-card {
+    position: relative; padding: 15px 15px 15px 44px;
+    border: 1px solid var(--line); border-radius: 12px; background: #fff;
+  }
+  .a11y-icon {
+    position: absolute; left: 13px; top: 14px;
+    display: grid; place-items: center; width: 22px; height: 22px;
+    border-radius: 7px; background: var(--blue-soft); color: var(--blue);
+    font-size: 10px; font-weight: 800;
+  }
+  .a11y-card h3 { font-size: 12px; font-weight: 800; line-height: 1.4; }
+  .a11y-card p { margin-top: 3px; color: var(--muted); font-size: 10.5px; line-height: 1.6; }
+  .site-footer {
+    max-width: var(--wrap); margin: 0 auto;
+    padding: 0 24px 42px; display: flex; flex-wrap: wrap;
+    gap: 4px 18px; justify-content: space-between;
+    color: var(--muted); font-size: 10.5px;
+  }
+  @media (max-width: 900px) {
+    .type-layout { grid-template-columns: 1fr; }
+    .bp-grid { grid-template-columns: 1fr; }
+    .shots-3 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 700px) {
+    .token-grid, .motion-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .flow-grid, .deep-link-grid, .a11y-grid { grid-template-columns: 1fr; }
+    .shots-2 { grid-template-columns: 1fr 1fr; }
+    .site-footer { padding: 0 16px 32px; flex-direction: column; }
+  }
+  @media (max-width: 420px) {
+    .token-grid, .motion-grid, .shots-2 { grid-template-columns: 1fr; }
+  }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<nav class="doc-nav" aria-label="文档章节导航">
+  <div class="doc-nav-inner">
+    <a class="doc-brand" href="#top" aria-label="回到文档顶部">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 6.6C10.4 5.1 8.3 4.5 5 4.5v12.9c3.3 0 5.4.6 7 2.1 1.6-1.5 3.7-2.1 7-2.1V4.5c-3.3 0-5.4.6-7 2.1Z"></path>
+          <path d="M12 6.6v12.9"></path>
+        </svg>
+      </span>
+      <span class="brand-text">306-mini-book<em>设计交付</em></span>
+    </a>
+    <span class="doc-version">v1.0 · 2026-11-15</span>
+    <div class="nav-links">
+      <a href="#overview">01 概述</a>
+      <a href="#architecture">02 信息架构</a>
+      <a href="#color">03 色彩</a>
+      <a href="#typography">04 字体排版</a>
+      <a href="#components">05 组件状态</a>
+      <a href="#interaction">06 交互适配</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Design Delivery · 单页学习入口</p>
+      <h1>西综学习中心<br><span>轻量学习入口</span></h1>
+      <p class="lede">面向西医综合考研人群的<strong>单页学习入口</strong>：把每日计划、口诀题库、工具面板等高频去处收在第一屏，再用两套可展开目录，把 9 册讲义变成可以按章、按节直达的页码索引。</p>
+      <div class="hero-chips" aria-label="关键数据">
+        <span class="chip">2 套讲义</span>
+        <span class="chip">9 个 PDF</span>
+        <span class="chip">1471 页</span>
+        <span class="chip">0 框架依赖</span>
+        <span class="chip">2 个响应式断点</span>
+      </div>
+      <p class="hero-note">本文档依据 306-mini-book 当前线上实现与 assets/data/toc.json 整理，截图来自 docs/screenshots。</p>
+    </div>
+
+    <aside class="hero-card" aria-label="交付概览">
+      <div class="card-top">
+        <span>Delivery Snapshot</span>
+        <span class="mini-badge">静态单页</span>
+      </div>
+      <p class="card-title">一个页面，三类任务</p>
+      <ul class="task-list">
+        <li>
+          <span class="n" aria-hidden="true">01</span>
+          <div><strong>找入口</strong><p>四个第三方平台，新标签打开，不打断当前页面。</p></div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">02</span>
+          <div><strong>选讲义</strong><p>西综 / 狂背二选一；再次点击当前卡即可取消。</p></div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">03</span>
+          <div><strong>直达页码</strong><p>章 → 节两级展开，点击小节打开 PDF 对应阅读器页码。</p></div>
+        </li>
+      </ul>
+      <div class="hero-meta" aria-label="交付信息">
+        <span>HTML + CSS + Vanilla JS</span>
+        <span>无后端</span>
+        <span>5 张截图</span>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main class="doc-wrap" id="main">
+
+  <!-- ================= 01 ================= -->
+  <section class="section-card" id="overview">
+    <div class="section-head">
+      <span class="sec-num" aria-hidden="true">01</span>
+      <div>
+        <p class="sec-kicker">Overview &amp; Positioning</p>
+        <h2>概述与定位</h2>
+      </div>
+    </div>
+
+    <p class="section-lead">这是一个为西医综合考研复习场景设计的<strong>轻量入口页</strong>，不是一个完整的学习平台。它只做三件事：把常用平台集中起来、把两套讲义目录结构化、把“某一节在第几页”变成一次点击。页面没有登录、没有服务端，也不需要构建。</p>
+
+    <div class="overview-grid">
+      <div class="prose">
+        <h3>面向谁</h3>
+        <p>面向正在备考西医综合（306）的考研人群，尤其是用手机或平板做碎片化复习、需要频繁在“计划 / 题库 / 工具 / 讲义”之间切换的人。使用场景通常很短：打开页面，点一个入口，或者找到某一章某一节，跳到 PDF。</p>
+
+        <h3>解决什么问题</h3>
+        <ul class="bullets">
+          <li><strong>入口分散：</strong>把每日计划、口诀题库、工具面板、GitHub 四个常用去处固定在首屏，不必翻聊天记录或收藏夹。</li>
+          <li><strong>PDF 书签不好用：</strong>把 9 册 PDF 的书签重排成“部分 → 章 → 节”的统一目录，支持单章展开与全部展开。</li>
+          <li><strong>页码查找成本高：</strong>每个小节生成「该页所在 PDF 分块 + <code>#page=</code>」的直达链接，新标签打开即定位到对应阅读器页码。</li>
+          <li><strong>分享复习位置麻烦：</strong>支持 <code>?lecture=xizong</code> 深链接，把“打开哪套讲义”预先写进 URL，必要时加 <code>&amp;all=1</code> 直接全展开。</li>
+        </ul>
+
+        <h3>不做什么</h3>
+        <p>页面不承载题库、不做账号体系、不记录学习进度，也不重新排版 PDF 内容。第三方平台负责它们各自的功能；本站只负责“入口”和“目录索引”，因此保持单页、静态、低维护成本。</p>
+      </div>
+
+      <aside class="quote-card">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <blockquote>先入口，后目录；<br>先定位，后阅读。</blockquote>
+        <cite>设计主张：减少一次打开页面到进入学习内容之间的操作层级。所有视觉强调都服务于“当前选中 / 当前展开”这两个状态。</cite>
+      </aside>
+    </div>
+
+    <div class="stats-grid" aria-label="内容数据">
+      <div class="stat"><strong>2</strong><span>套讲义</span><em>西综 + 狂背</em></div>
+      <div class="stat"><strong>8</strong><span>个部分</span><em>5 + 3</em></div>
+      <div class="stat"><strong>56</strong><span>章</span><em>37 + 19</em></div>
+      <div class="stat"><strong>424</strong><span>节</span><em>244 + 180</em></div>
+      <div class="stat"><strong>1471</strong><span>页</span><em>1288 + 183</em></div>
+      <div class="stat"><strong>9</strong><span>个 PDF</span><em>6 + 3</em></div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-icon" aria-hidden="true">i</span>
+      <p><strong>数据口径：</strong>西综讲义为 5 部分 · 37 章 · 244 节 · 1288 页，对应生理、生化、病理、内科、外科共 6 个 PDF；狂背讲义为 3 部分 · 19 章 · 180 节 · 183 页，对应 3 个 PDF。合计 8 部分、56 章、424 节、1471 页、9 个 PDF。</p>
+    </div>
+
+    <div class="principle-grid" aria-label="设计原则">
+      <div class="principle"><span>PRINCIPLE 01</span><h3>入口优先</h3><p>首屏先给高频去处，再给目录；不需要先理解站点结构。</p></div>
+      <div class="principle"><span>PRINCIPLE 02</span><h3>状态可见</h3><p>选中、展开、悬停都用蓝色系反馈，用户始终知道自己在哪一层。</p></div>
+      <div class="principle"><span>PRINCIPLE 03</span><h3>轻量可维护</h3><p>单页静态实现，目录数据与展示分离，改数据即可更新内容。</p></div>
+    </div>
+  </section>
+
+  <!-- ================= 02 ================= -->
+  <section class="section-card" id="architecture">
+    <div class="section-head">
+      <span class="sec-num" aria-hidden="true">02</span>
+      <div>
+        <p class="sec-kicker">Information Architecture</p>
+        <h2>信息架构图</h2>
+      </div>
+    </div>
+
+    <p class="section-lead">页面只有一条纵向主轴：<strong>顶部品牌栏 → 第三方链接直达区 → 讲义主体区</strong>。前两层是“离开本站去别处”的入口，第三层才是站内真正的内容区；讲义选择与目录面板在第三层内左右衔接，形成“选讲义 → 展开章 → 点小节”的单一路径。</p>
+
+    <div class="svg-frame">
+      <svg class="arch-svg" viewBox="0 0 900 560" role="img" aria-labelledby="iaTitle iaDesc">
+        <title id="iaTitle">306-mini-book 信息架构图</title>
+        <desc id="iaDesc">顶部品牌栏连接第三方链接直达区，再连接讲义主体区；主体区包含讲义选择与目录面板，底部为选讲义、展开章、点小节、打开 PDF 页码的用户路径。</desc>
+        <defs>
+          <linearGradient id="iaBrand" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3B82F6"></stop>
+            <stop offset=".52" stop-color="#2563EB"></stop>
+            <stop offset="1" stop-color="#1D4ED8"></stop>
+          </linearGradient>
+          <linearGradient id="iaChip" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#EFF6FF"></stop>
+            <stop offset="1" stop-color="#DBEAFE"></stop>
+          </linearGradient>
+          <marker id="iaArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#93B8FB"></path>
+          </marker>
+        </defs>
+
+        <!-- 层级 1：品牌栏 -->
+        <rect x="100" y="18" width="700" height="66" rx="16" fill="url(#iaBrand)"></rect>
+        <text x="126" y="44" font-size="11" fill="#DBEAFE" letter-spacing="1">LEVEL 01 · 顶部品牌栏</text>
+        <text x="126" y="66" font-size="16" font-weight="700" fill="#FFFFFF">西综学习中心</text>
+        <text x="774" y="44" text-anchor="end" font-size="11" fill="#DBEAFE">sticky · 毛玻璃 · 高度 64px</text>
+        <text x="774" y="64" text-anchor="end" font-size="12" fill="#FFFFFF">品牌标识 / 站名 / 使用说明</text>
+
+        <line x1="450" y1="84" x2="450" y2="112" stroke="#93B8FB" stroke-width="2" marker-end="url(#iaArrow)"></line>
+        <text x="462" y="103" font-size="10" fill="#64748B">向下滚动仍可见</text>
+
+        <!-- 层级 2：第三方链接 -->
+        <rect x="100" y="116" width="700" height="102" rx="16" fill="#FFFFFF" stroke="#BFD7FE"></rect>
+        <text x="126" y="142" font-size="12" font-weight="700" fill="#0F172A">第三方链接直达区</text>
+        <text x="126" y="158" font-size="10" fill="#64748B">target=_blank · rel=noopener noreferrer · 不打断当前页</text>
+
+        <rect x="126" y="168" width="150" height="36" rx="10" fill="url(#iaChip)"></rect>
+        <text x="201" y="191" text-anchor="middle" font-size="12" font-weight="600" fill="#1D4ED8">每日计划 ↗</text>
+        <rect x="291" y="168" width="150" height="36" rx="10" fill="url(#iaChip)"></rect>
+        <text x="366" y="191" text-anchor="middle" font-size="12" font-weight="600" fill="#1D4ED8">口诀 / 题库 ↗</text>
+        <rect x="456" y="168" width="150" height="36" rx="10" fill="url(#iaChip)"></rect>
+        <text x="531" y="191" text-anchor="middle" font-size="12" font-weight="600" fill="#1D4ED8">工具面板 ↗</text>
+        <rect x="621" y="168" width="150" height="36" rx="10" fill="url(#iaChip)"></rect>
+        <text x="696" y="191" text-anchor="middle" font-size="12" font-weight="600" fill="#1D4ED8">GitHub ↗</text>
+
+        <line x1="450" y1="218" x2="450" y2="246" stroke="#93B8FB" stroke-width="2" marker-end="url(#iaArrow)"></line>
+
+        <!-- 层级 3：讲义主体区 -->
+        <rect x="60" y="252" width="780" height="236" rx="18" fill="#F8FBFF" stroke="#BFD7FE" stroke-dasharray="6 5"></rect>
+        <text x="450" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#1D4ED8" letter-spacing=".8">LEVEL 03 · 讲义主体区</text>
+
+        <!-- 讲义选择 -->
+        <rect x="84" y="294" width="286" height="166" rx="14" fill="#FFFFFF" stroke="#E7EEFB"></rect>
+        <text x="104" y="319" font-size="13" font-weight="700" fill="#0F172A">讲义选择</text>
+        <text x="104" y="334" font-size="9.5" fill="#64748B">两张按钮卡 · 二选一 / 可取消</text>
+        <rect x="104" y="346" width="246" height="44" rx="10" fill="url(#iaBrand)"></rect>
+        <text x="120" y="365" font-size="11" font-weight="700" fill="#FFFFFF">西综讲义</text>
+        <text x="120" y="380" font-size="9.5" fill="#DBEAFE">5 部分 · 37 章 · 244 节 · 1288 页</text>
+        <text x="336" y="373" text-anchor="end" font-size="12" fill="#FFFFFF">›</text>
+        <rect x="104" y="398" width="246" height="44" rx="10" fill="#FFFFFF" stroke="#E7EEFB"></rect>
+        <text x="120" y="417" font-size="11" font-weight="700" fill="#0F172A">狂背讲义</text>
+        <text x="120" y="432" font-size="9.5" fill="#64748B">3 部分 · 19 章 · 180 节 · 183 页</text>
+        <text x="336" y="425" text-anchor="end" font-size="12" fill="#64748B">›</text>
+
+        <line x1="378" y1="377" x2="412" y2="377" stroke="#93B8FB" stroke-width="2" marker-end="url(#iaArrow)"></line>
+        <text x="395" y="365" text-anchor="middle" font-size="9" fill="#64748B">选择</text>
+
+        <!-- 目录面板 -->
+        <rect x="424" y="294" width="392" height="166" rx="14" fill="#FFFFFF" stroke="#E7EEFB"></rect>
+        <text x="444" y="319" font-size="13" font-weight="700" fill="#0F172A">目录面板</text>
+        <text x="444" y="334" font-size="9.5" fill="#64748B">tocHead 元信息 + tocBody 动态渲染</text>
+        <text x="444" y="354" font-size="10" font-weight="600" fill="#1D4ED8">5 部分 · 37 章 · 244 节 · 1288 页</text>
+
+        <rect x="444" y="366" width="58" height="24" rx="7" fill="#EFF6FF"></rect>
+        <text x="473" y="382" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1D4ED8">部分</text>
+        <path d="M 508 378 H 519" stroke="#93B8FB" stroke-width="1.6" marker-end="url(#iaArrow)"></path>
+        <rect x="525" y="366" width="58" height="24" rx="7" fill="#EFF6FF"></rect>
+        <text x="554" y="382" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1D4ED8">章</text>
+        <path d="M 589 378 H 600" stroke="#93B8FB" stroke-width="1.6" marker-end="url(#iaArrow)"></path>
+        <rect x="606" y="366" width="58" height="24" rx="7" fill="#2563EB"></rect>
+        <text x="635" y="382" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">节</text>
+
+        <text x="444" y="414" font-size="9.5" fill="#64748B">全部展开 / 全部收起 · 章节高度动画</text>
+        <rect x="444" y="426" width="352" height="22" rx="6" fill="#F8FAFC"></rect>
+        <text x="456" y="441" font-size="9.5" fill="#334155">点击节 → 分块 PDF#page=N（新标签）</text>
+
+        <!-- 用户路径 -->
+        <rect x="190" y="512" width="520" height="32" rx="16" fill="#EFF6FF"></rect>
+        <text x="450" y="533" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1D4ED8">用户路径：选讲义 → 展开章 → 点小节 → 打开 PDF 对应页码</text>
+      </svg>
+    </div>
+
+    <div class="arch-legend" aria-label="图例">
+      <span class="legend-item"><span class="legend-dot" aria-hidden="true"></span>蓝色渐变：品牌 / 选中态</span>
+      <span class="legend-item"><span class="legend-dot soft" aria-hidden="true"></span>浅蓝：可点击的入口</span>
+      <span class="legend-item"><span class="legend-dot line" aria-hidden="true"></span>连线：页面纵向层级</span>
+    </div>
+
+    <div class="callout" style="margin-top:18px">
+      <span class="callout-icon" aria-hidden="true">→</span>
+      <p><strong>结构规则：</strong>第三层内部只有两个动作——选讲义、展开目录；不存在侧边栏、二级路由或独立详情页。深链接只负责“预先选中某套讲义”，不改变这条主轴。</p>
+    </div>
+  </section>
+
+  <!-- ================= 03 ================= -->
+  <section class="section-card" id="color">
+    <div class="section-head">
+      <span class="sec-num" aria-hidden="true">03</span>
+      <div>
+        <p class="sec-kicker">Color System</p>
+        <h2>色彩规范</h2>
+      </div>
+    </div>
+
+    <p class="section-lead">以白色卡片承载内容，以浅蓝页面底区分层级，以主蓝承担“可点击 / 已选中 / 已展开”的语义。蓝色不铺大面积正文，只做强调；这样在长时间阅读目录时不会产生疲劳，也能让状态变化足够明确。</p>
+
+    <div class="swatch-grid" aria-label="七个基础色">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2563EB"><span class="swatch-role">主色</span></div>
+        <div class="swatch-body">
+          <div class="swatch-line"><strong>#2563EB</strong><span>主蓝</span></div>
+          <p>主操作、选中态、链接、页码强调、图标主色。</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1D4ED8"><span class="swatch-role">深色</span></div>
+        <div class="swatch-body">
+          <div class="swatch-line"><strong>#1D4ED8</strong><span>深蓝</span></div>
+          <p>渐变终点、悬停文字、按钮文字、深色强调。</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color tone-light" style="background:#EFF6FF"><span class="swatch-role">浅色</span></div>
+        <div class="swatch-body">
+          <div class="swatch-line"><strong>#EFF6FF</strong><span>浅蓝底</span></div>
+          <p>图标底色、选中背景、标签、悬停高亮。</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0F172A"><span class="swatch-role">文字</span></div>
+        <div class="swatch-body">
+          <div class="swatch-line"><strong>#0F172A</strong><span>正文</span></div>
+          <p>标题、正文、章节名；对白底约 17:1。</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#64748B"><span class="swatch-role">辅助</span></div>
+        <div class="swatch-body">
+          <div class="swatch-line"><strong>#64748B</strong><span>辅助</span></div>
+          <p>说明文字、页码、元信息；对白底约 4.76:1。</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color tone-light" style="background:#E7EEFB"><span class="swatch-role">边界</span></div>
+        <div class="swatch-body">
+          <div class="swatch-line"><strong>#E7EEFB</strong><span>边框</span></div>
+          <p>卡片边界、分隔线、输入与面板描边。</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color tone-light" style="background:#F7FAFF"><span class="swatch-role">底色</span></div>
+        <div class="swatch-body">
+          <div class="swatch-line"><strong>#F7FAFF</strong><span>页面底</span></div>
+          <p>页面背景、章节行悬停、浅色分区。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contrast-grid" aria-label="对比度">
+      <div class="contrast-card">
+        <span class="ratio">≈ 17:1</span>
+        <div class="contrast-sample ink">正文 #0F172A on #FFFFFF</div>
+        <p>标题与正文使用近黑蓝，白底阅读清晰。远高于 WCAG AA 对普通文本 4.5:1 的最低要求。</p>
+        <span class="pass">WCAG AA 通过</span>
+      </div>
+      <div class="contrast-card">
+        <span class="ratio">≈ 4.76:1</span>
+        <div class="contrast-sample muted">辅助文字 #64748B on #FFFFFF</div>
+        <p>用于 12px 说明、页码与元信息。刚高于 4.5:1 的 AA 门槛，因此不再叠加透明度，也不用于长段落正文。</p>
+        <span class="pass">WCAG AA 通过</span>
+      </div>
+    </div>
+
+    <div class="gradient-note">
+      <span class="gradient-sample" aria-hidden="true"></span>
+      <div>
+        <strong>品牌与选中态渐变</strong>
+        <p><code>linear-gradient(135deg, #3B82F6 0%, #2563EB 42%, #1D4ED8 100%)</code>。仅用于品牌标识、讲义选中卡等小面积强调，正文与大面积背景不使用渐变。</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:16px">
+      <span class="callout-icon" aria-hidden="true">◐</span>
+      <p><strong>用色策略：</strong>页面以 #FFFFFF / #F7FAFF 为底，约占视觉面积七成；#EFF6FF 与 #E7EEFB 负责分区和边界；#2563EB 只出现在需要在 0.2 秒内被注意到的位置。深蓝 #1D4ED8 主要出现在渐变末端和悬停文字，避免与主蓝抢层级。</p>
+    </div>
+  </section>
+
+  <!-- ================= 04 ================= -->
+  <section class="section-card" id="typography">
+    <div class="section-head">
+      <span class="sec-num" aria-hidden="true">04</span>
+      <div>
+        <p class="sec-kicker">Typography</p>
+        <h2>字体与排版</h2>
+      </div>
+    </div>
+
+    <p class="section-lead">全站使用<strong>系统字体栈</strong>，不加载任何 Web Font：在中英文混排、数字页码密集的目录场景里，系统字体能保证首屏速度与离线可用性。字号层级克制在 16.5px 到 11px 之间，靠字重、颜色与留白建立层级，而不是靠巨大的标题。</p>
+
+    <div class="type-layout">
+      <div class="type-sample-card" aria-label="字号样例">
+        <div class="sample-top">
+          <span>Type Scale</span>
+          <span class="token-pill">行高 1.6</span>
+        </div>
+        <div class="sample-line"><span class="sample-brand">西综学习中心</span><em>16.5 / 700</em></div>
+        <div class="sample-line"><span class="sample-heading">讲义目录</span><em>15 / 700</em></div>
+        <div class="sample-line"><span class="sample-chapter">第二章 细胞的基本功能</span><em>14 / 600</em></div>
+        <div class="sample-line"><span class="sample-body">点击上方任一讲义，查看完整目录</span><em>14 / 400</em></div>
+        <div class="sample-line"><span class="sample-section">1.跨膜转运</span><em>13 / 400</em></div>
+        <div class="sample-line"><span class="sample-muted">5 部分 · 37 章 · 244 节 · 1288 页</span><em>12 / 400</em></div>
+        <div class="sample-line"><span class="sample-page">P12</span><em>11.5 / 600</em></div>
+      </div>
+
+      <div class="prose">
+        <h3>字体栈</h3>
+        <pre class="fontstack"><span>font-family:</span>
+  -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+  "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;</pre>
+        <p>优先使用各平台的系统 UI 字体：macOS / iOS 落在 PingFang SC，Windows 落在 Microsoft YaHei，Android 落在 Noto Sans CJK SC。英文、数字与标点回退到 Segoe UI 或 SF，保证页码和统计数字的清晰度。</p>
+
+        <h3>数字与中文</h3>
+        <p>页码、章数、节数使用 <code>font-variant-numeric: tabular-nums</code>，让目录中的 P12、P128 等页码纵向对齐。中文标题允许 <code>overflow-wrap: anywhere</code>，避免长章节名在窄屏溢出；正文不做两端对齐，保持自然的左对齐节奏。</p>
+      </div>
+    </div>
+
+    <h3 class="block-title">字号层级</h3>
+    <div class="table-wrap">
+      <table>
+        <caption class="sr-only">字体与排版规范</caption>
+        <thead>
+          <tr><th>用途</th><th>字号 / 字重</th><th>行高</th><th>典型颜色</th><th>实现与说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>站名</strong></td><td>16.5px / 700</td><td>1.25</td><td>#0F172A</td><td><code>.brand-name</code>，手机端降为 15.5px；副标题 11px。</td></tr>
+          <tr><td><strong>区块标题</strong></td><td>15px / 700</td><td>1.6</td><td>#0F172A</td><td><code>.sec-head h2</code>，左侧 3px 蓝色渐变竖条。</td></tr>
+          <tr><td><strong>讲义名</strong></td><td>15px / 700</td><td>1.6</td><td>当前色</td><td><code>.lec-name</code>；选中后继承白色，描述降为 84% 白。</td></tr>
+          <tr><td><strong>正文 / 章名</strong></td><td>14px / 400–600</td><td>1.6</td><td>#0F172A</td><td><code>body</code> 基准 14px；<code>.ch-title</code> 用 600 字重区分。</td></tr>
+          <tr><td><strong>小节名</strong></td><td>13px / 400</td><td>1.6</td><td>#334155</td><td><code>.sec-item</code>；悬停转深蓝 #1D4ED8，手机端 12.5px。</td></tr>
+          <tr><td><strong>辅助说明</strong></td><td>12px / 400</td><td>1.6</td><td>#64748B</td><td>目录元信息、卡片描述、页脚；浅色场景用 #66768C。</td></tr>
+          <tr><td><strong>页码徽标</strong></td><td>11.5px / 600</td><td>1.6</td><td>#2563EB</td><td><code>.ch-page</code> 浅蓝底；<code>.sec-page</code> 默认 #64748B。</td></tr>
+          <tr><td><strong>按钮文字</strong></td><td>12.5px / 600</td><td>1.6</td><td>#1D4ED8</td><td>使用说明、全部展开 / 收起；手机端保持不换行。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="block-title">间距与圆角</h3>
+    <div class="token-grid" aria-label="布局令牌">
+      <div class="token"><strong>1080px</strong><span>内容最大宽度 --wrap</span></div>
+      <div class="token"><strong>64 / 58px</strong><span>品牌栏高度；≤520px 切换</span></div>
+      <div class="token"><strong>16px</strong><span>卡片圆角 --radius-card</span></div>
+      <div class="token"><strong>18px</strong><span>目录面板圆角 --radius-panel</span></div>
+      <div class="token"><strong>16px</strong><span>桌面栅格间距；手机 12px</span></div>
+      <div class="token"><strong>28px</strong><span>模块间距；手机 22px</span></div>
+      <div class="token"><strong>24px</strong><span>页面左右留白；手机 16px</span></div>
+    </div>
+
+    <div class="callout" style="margin-top:18px">
+      <span class="callout-icon" aria-hidden="true">Aa</span>
+      <p><strong>排版原则：</strong>全局 <code>line-height: 1.6</code> 给目录与说明文字留出呼吸感；品牌名收窄到 1.25 以保持标志性紧凑。标题不追求超大字号，而用字重、蓝色前缀和上下留白建立层级，避免在手机端挤压首屏。</p>
+    </div>
+  </section>
+
+  <!-- ================= 05 ================= -->
+  <section class="section-card" id="components">
+    <div class="section-head">
+      <span class="sec-num" aria-hidden="true">05</span>
+      <div>
+        <p class="sec-kicker">Component States</p>
+        <h2>组件状态说明</h2>
+      </div>
+    </div>
+
+    <p class="section-lead">所有交互反馈都收敛在两类信号里：<strong>位置变化</strong>（上移 3px）与<strong>蓝色深浅变化</strong>（浅蓝底 → 蓝渐变 → 白字）。下表覆盖快捷入口卡、讲义卡、章节行、小节行、空状态与全部展开 / 收起按钮的全部可见状态。</p>
+
+    <div class="table-wrap">
+      <table class="component-table">
+        <caption class="sr-only">组件状态、视觉变化与实现要点</caption>
+        <thead>
+          <tr><th>组件</th><th>状态</th><th>视觉变化</th><th>实现要点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" rowspan="3" class="comp-name">快捷入口卡<span class="comp-sub">.link-card</span></th>
+            <td><span class="state state-default">默认</span></td>
+            <td>白卡、1px #E7EEFB 边框、16px 圆角、42px 浅蓝图标、轻阴影；描述 12px 辅助色。</td>
+            <td><code>.link-card</code> 使用 <code>--radius-card</code> 与 <code>--shadow-xs</code>；图标 42×42、圆角 12px。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-hover">悬停</span></td>
+            <td>整体上移 3px，边框转 #BFD7FE，阴影加强；图标变蓝色渐变、图标转白，描述转 #475569。</td>
+            <td><code>.link-card:hover</code> 的 <code>translateY(-3px)</code>；图标背景 <code>linear-gradient(140deg,#3B82F6,#1D4ED8)</code>，过渡 0.22s。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-hover">按下</span></td>
+            <td>上移量收回到 1px，形成轻微的“按下”反馈。</td>
+            <td><code>.link-card:active { transform: translateY(-1px); }</code></td>
+          </tr>
+
+          <tr>
+            <th scope="row" rowspan="4" class="comp-name">讲义卡<span class="comp-sub">.lec-card</span></th>
+            <td><span class="state state-default">默认</span></td>
+            <td>白卡、44px 浅蓝图标、右侧 26px 圆形箭头；按钮本身无边框，靠卡片边界识别。</td>
+            <td><code>.lec-card</code> 是 <code>button</code>，初始 <code>aria-expanded="false"</code>，右侧箭头 26×26。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-hover">悬停</span></td>
+            <td>上移 3px，边框转 #BFD7FE、阴影加强；图标底色从 #EFF6FF 变为 #DBEAFE。</td>
+            <td><code>.lec-card:hover</code>；图标 <code>.lec-icon</code> 过渡 0.24s。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-selected">选中</span></td>
+            <td>蓝色渐变底 + 白字；箭头旋转 90deg；图标变 18% 白底；阴影加深并上移 1px。</td>
+            <td><code>.lec-card.is-selected</code>；渐变 135deg；<code>.lec-arrow { transform: rotate(90deg); }</code>；<code>aria-expanded="true"</code>。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-default">再次点击取消</span></td>
+            <td>选中样式全部移除，目录头部隐藏，目录区恢复为虚线空状态。</td>
+            <td><code>state.lecture === id</code> 时调用 <code>clearLecture()</code>：移除 <code>is-selected</code>、隐藏 <code>tocHead</code>、还原 <code>EMPTY_HTML</code>。</td>
+          </tr>
+
+          <tr>
+            <th scope="row" rowspan="3" class="comp-name">章节行<span class="comp-sub">.ch-row</span></th>
+            <td><span class="state state-default">默认</span></td>
+            <td>透明底；编号为浅灰底蓝灰字；右侧“N 节”与蓝色 P 页码徽标；箭头朝右。</td>
+            <td><code>.ch-row</code> 为 5 列 grid（序号 / 标题 / 节数 / 页码 / 箭头）；<code>aria-expanded="false"</code>。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-hover">悬停</span></td>
+            <td>整行底色转为 #F7FAFF，页码徽标加深为 #DFEBFE。</td>
+            <td><code>.ch-row:hover</code>；页码徽标 <code>.ch-page</code> 同步过渡。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-open">展开</span></td>
+            <td>行底色 #EFF6FF；序号变蓝渐变、白字；箭头旋转 90deg；下方小节列表高度展开。</td>
+            <td><code>.chapter.is-open &gt; .ch-row</code>；<code>.ch-no</code> 蓝渐变；<code>aria-expanded="true"</code>，<code>sec-list</code> 高度从 0 动画到 auto。</td>
+          </tr>
+
+          <tr>
+            <th scope="row" rowspan="2" class="comp-name">小节行<span class="comp-sub">.sec-item</span></th>
+            <td><span class="state state-default">默认</span></td>
+            <td>13px 蓝灰字；页码 11.5px #64748B；左侧预留 3px 竖线位置但透明。</td>
+            <td>原生 <code>a</code>，<code>href</code> 指向 <code>pdf/xxx.pdf#page=N</code>；<code>target="_blank"</code> 与 <code>rel="noopener noreferrer"</code>。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-hover">悬停</span></td>
+            <td>浅蓝底、深蓝字；左侧 3px 蓝色竖线显现；页码同步变主蓝。</td>
+            <td><code>.sec-item:hover</code> + <code>::before</code>；竖线 <code>scaleY(.4) → scaleY(1)</code>，过渡 0.16s。</td>
+          </tr>
+
+          <tr>
+            <th scope="row" class="comp-name">空状态<span class="comp-sub">.toc-empty</span></th>
+            <td><span class="state state-empty">未选讲义</span></td>
+            <td>1.5px 虚线框、浅蓝渐变底、46px 浅蓝图标；标题 13.5px / 600，提示 12px 辅助色。</td>
+            <td>初始 HTML 被保存为 <code>EMPTY_HTML</code>；取消选择时整体还原。提示文案为“点击上方任一讲义，查看完整目录”。</td>
+          </tr>
+
+          <tr>
+            <th scope="row" rowspan="3" class="comp-name">全部展开 / 收起<span class="comp-sub">.btn-toggle</span></th>
+            <td><span class="state state-default">默认</span></td>
+            <td>白底胶囊、1px #BFD7FE 边框、深蓝 12.5px 文字；初始文案“全部展开”。</td>
+            <td><code>.btn-toggle</code>；<code>white-space: nowrap</code>；无章节时随 <code>tocHead</code> 一起 <code>hidden</code>，不显示禁用态。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-hover">悬停 / 按下</span></td>
+            <td>悬停转 #EFF6FF 底、边框加深并带轻阴影；按下缩放到 0.98。</td>
+            <td><code>.btn-toggle:hover</code> / <code>:active</code>；过渡 0.18s。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-open">全部展开后</span></td>
+            <td>文案切换为“全部收起”，<code>aria-expanded="true"</code>；所有章节行同时呈展开态。</td>
+            <td><code>syncToggleAll()</code> 检查 <code>every(aria-expanded === "true")</code>；按钮点击后对全部行调用 <code>setChapterOpen()</code>。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mini-note">
+      <strong>章内没有小节时：</strong>不渲染空的 <code>.sec-list</code>，而是显示 <code>.sec-empty</code> 提示“本章未细分小节，直接打开第 N 页”，其中 N 链接到 <code>该章 file#page=chapter.page</code>。该分支在数据里对应 <code>sections: []</code> 的章节，例如生理学“绪论”。
+    </div>
+
+    <div class="motion-grid" aria-label="动效参数">
+      <div class="motion"><span>HOVER</span><strong>0.18–0.24s</strong><p>颜色、边框、阴影与位移的通用过渡。</p></div>
+      <div class="motion"><span>CHAPTER</span><strong>0.30s</strong><p>小节列表 height 动画，结束后置为 auto。</p></div>
+      <div class="motion"><span>ENTER</span><strong>0.32s</strong><p>切换讲义时目录淡入并上移 10px。</p></div>
+      <div class="motion"><span>EASING</span><strong>cubic-bezier(.2,.7,.3,1)</strong><p>统一缓动，快出慢收，避免弹跳。</p></div>
+      <div class="motion"><span>LIFT</span><strong>-3px</strong><p>卡片悬停上移；选中卡只上移 1px。</p></div>
+      <div class="motion"><span>REDUCED</span><strong>0.001ms</strong><p>prefers-reduced-motion 下关闭动效。</p></div>
+    </div>
+  </section>
+
+  <!-- ================= 06 ================= -->
+  <section class="section-card" id="interaction">
+    <div class="section-head">
+      <span class="sec-num" aria-hidden="true">06</span>
+      <div>
+        <p class="sec-kicker">Interaction · Responsive · Accessibility</p>
+        <h2>交互说明、响应式与可访问性</h2>
+      </div>
+    </div>
+
+    <p class="section-lead">所有交互都发生在同一页，没有路由跳转：选择讲义只重绘目录区，展开章节只改变当前行与小节列表，点击小节才离开本站。下面的流程、断点与截图共同描述这套单页体验的边界。</p>
+
+    <h3 class="block-title">主交互流程</h3>
+    <div class="flow-grid">
+      <div class="flow-step">
+        <span class="n" aria-hidden="true">01</span>
+        <h3>选择讲义</h3>
+        <p>点击“西综讲义”或“狂背讲义”。卡片进入 <code>is-selected</code>，目录头部显示名称与“部分 · 章 · 节 · 页”统计，目录区以 0.32s 淡入上移动画重绘。若面板顶部低于视口 58%，平滑滚动到面板。</p>
+      </div>
+      <div class="flow-step">
+        <span class="n" aria-hidden="true">02</span>
+        <h3>展开 / 收起章节</h3>
+        <p>点击章节行，<code>aria-expanded</code> 与 <code>.chapter.is-open</code> 同步切换；小节列表高度从 0 动画到 <code>scrollHeight</code>，动画结束后置为 <code>auto</code>，再次点击反向收起。</p>
+      </div>
+      <div class="flow-step">
+        <span class="n" aria-hidden="true">03</span>
+        <h3>点击小节直达 PDF</h3>
+        <p>小节是原生链接，<code>href</code> 为 <code>pdf/chunks/分块名-序号-哈希.pdf#page=块内页码</code>，<code>target="_blank"</code> 打开新标签，阅读器定位到对应页。大 PDF 已按页切成约 5 MB 的分块，首次只下载当前这一块，打开过的分块会被浏览器缓存；页码以 PDF 阅读器为准，不是印刷页码。</p>
+      </div>
+      <div class="flow-step">
+        <span class="n" aria-hidden="true">04</span>
+        <h3>全部展开 / 收起</h3>
+        <p>按钮根据所有章节的 <code>aria-expanded</code> 判断当前是否全开：未全开则一次展开全部并改为“全部收起”，已全开则一次收起。</p>
+      </div>
+      <div class="flow-step">
+        <span class="n" aria-hidden="true">05</span>
+        <h3>再次点击当前讲义</h3>
+        <p>已选中的讲义卡再次点击会取消选择：移除蓝色渐变、隐藏目录头、恢复初始空状态，并通过 live region 播报“已收起目录”。</p>
+      </div>
+      <div class="flow-step">
+        <span class="n" aria-hidden="true">06</span>
+        <h3>使用说明弹层</h3>
+        <p>顶部“使用说明”打开原生 <code>dialog</code>，点击关闭按钮、点击遮罩或按 Esc 关闭；浏览器不支持 <code>showModal()</code> 时自动隐藏该按钮。</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:16px">
+      <span class="callout-icon" aria-hidden="true">↕</span>
+      <p><strong>滚动策略：</strong>选择讲义后不强制滚动。只有目录面板顶部已经落到视口 58% 以下时才调用 <code>scrollIntoView({behavior:"smooth", block:"start"})</code>，避免用户刚点完卡片就被“抢走”页面位置。目录面板还设置了 <code>scroll-margin-top: 84px</code>，防止吸顶品牌栏遮住标题。</p>
+    </div>
+
+    <h3 class="block-title">深链接参数</h3>
+    <pre class="code-block"><span class="cmt"># 打开西综讲义目录</span>
+index.html?lecture=xizong
+
+<span class="cmt"># 打开狂背讲义，并直接展开全部章节</span>
+index.html?lecture=kuangbei&amp;all=1</pre>
+    <div class="deep-link-grid">
+      <div class="deep-link">
+        <code>?lecture=xizong</code>
+        <p>按 <code>lectures</code> 的 id 预选讲义；id 不存在时静默忽略，页面保持初始空状态。</p>
+      </div>
+      <div class="deep-link">
+        <code>?all=1</code>
+        <p>仅在 <code>lecture</code> 有效时生效，随后把所有章节设为展开。单独使用不会触发展开。</p>
+      </div>
+    </div>
+
+    <h3 class="block-title">响应式断点</h3>
+    <div class="bp-grid">
+      <div class="bp-card">
+        <span class="bp-range">&gt; 860px</span>
+        <h3>桌面端</h3>
+        <ul>
+          <li>快捷入口 4 列，讲义卡 2 列。</li>
+          <li>章节行完整显示：序号、标题、N 节、页码、箭头。</li>
+          <li>品牌栏高 64px；内容最大宽度 1080px。</li>
+        </ul>
+      </div>
+      <div class="bp-card">
+        <span class="bp-range">521–860px</span>
+        <h3>平板 / 窄屏</h3>
+        <ul>
+          <li>快捷入口降为 2 列；讲义卡改为单列。</li>
+          <li>入口图标、卡片内边距保持桌面尺寸，触控目标不缩小。</li>
+          <li>目录结构不变，仍展示节数与页码。</li>
+        </ul>
+      </div>
+      <div class="bp-card">
+        <span class="bp-range">≤ 520px</span>
+        <h3>手机端</h3>
+        <ul>
+          <li>快捷入口、讲义卡全部单列；品牌栏降到 58px，隐藏副标题。</li>
+          <li>章节行隐藏“N 节”（<code>.ch-count</code>），保留标题与页码。</li>
+          <li>目录头部改为可换行，按钮靠右；小节缩进收窄到 14px。</li>
+        </ul>
+      </div>
+    </div>
+    <p class="section-lead" style="margin-top:12px;margin-bottom:0;font-size:12px">样式表使用 <code>@media (max-width: 860px)</code> 与 <code>@media (max-width: 520px)</code> 两个断点。因此 860px 本身进入平板规则，861px 起才是四列 / 两列的桌面布局；520px 本身进入手机规则。</p>
+
+    <h3 class="block-title">界面截图</h3>
+    <div class="shot-group">
+      <h3>桌面端</h3>
+      <div class="shots shots-3">
+        <figure class="shot">
+          <a href="./screenshots/desktop-empty.png" target="_blank" rel="noopener" aria-label="查看桌面端空状态大图">
+            <img src="./screenshots/desktop-empty.png" alt="桌面端初始空状态：顶部品牌栏、四个快捷入口卡、两张讲义卡，以及带虚线提示的空目录面板。" loading="lazy">
+          </a>
+          <figcaption><strong>desktop-empty.png</strong>初始空状态。首屏同时给出入口、讲义选择与下一步提示。</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="./screenshots/desktop-toc.png" target="_blank" rel="noopener" aria-label="查看桌面端目录大图">
+            <img src="./screenshots/desktop-toc.png" alt="桌面端选中西综讲义后的目录：蓝色选中卡片、目录统计信息、部分分组与章节列表。" loading="lazy">
+          </a>
+          <figcaption><strong>desktop-toc.png</strong>选中西综讲义。目录头部显示 5 部分 · 37 章 · 244 节 · 1288 页。</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="./screenshots/desktop-expanded.png" target="_blank" rel="noopener" aria-label="查看桌面端展开状态大图">
+            <img src="./screenshots/desktop-expanded.png" alt="桌面端展开章节后的目录：章节行浅蓝底、序号蓝色渐变，小节列表显示名称与页码。" loading="lazy">
+          </a>
+          <figcaption><strong>desktop-expanded.png</strong>章节展开态。序号转蓝、箭头旋转，小节逐条列出页码。</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="shot-group">
+      <h3>移动端</h3>
+      <div class="shots shots-2">
+        <figure class="shot">
+          <a href="./screenshots/mobile-empty.png" target="_blank" rel="noopener" aria-label="查看移动端空状态大图">
+            <img src="./screenshots/mobile-empty.png" alt="移动端初始空状态：快捷入口与讲义卡均为单列，目录区显示空状态提示。" loading="lazy">
+          </a>
+          <figcaption><strong>mobile-empty.png</strong>手机端空状态。入口、讲义卡全单列，首屏信息不横向溢出。</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="./screenshots/mobile-toc.png" target="_blank" rel="noopener" aria-label="查看移动端目录大图">
+            <img src="./screenshots/mobile-toc.png" alt="移动端目录：目录头部换行，章节行隐藏节数，保留页码与展开箭头。" loading="lazy">
+          </a>
+          <figcaption><strong>mobile-toc.png</strong>手机端目录。隐藏节数、目录头换行，页码仍是可点击的直达入口。</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <h3 class="block-title">可访问性说明</h3>
+    <div class="a11y-grid">
+      <div class="a11y-card">
+        <span class="a11y-icon" aria-hidden="true">⌨</span>
+        <h3>键盘可聚焦</h3>
+        <p>讲义卡与章节行都是原生 <code>button</code>，小节是原生 <code>a</code>，Tab / Shift+Tab 顺序与视觉顺序一致，Enter / Space 可直接触发。底部还提供“跳到主要内容”的 skip link。</p>
+      </div>
+      <div class="a11y-card">
+        <span class="a11y-icon" aria-hidden="true">AR</span>
+        <h3>aria-expanded 同步</h3>
+        <p>讲义卡和章节行都维护 <code>aria-expanded</code>：选中讲义时对应卡为 true，展开章节时该行为 true；取消选择或收起时同步回到 false，避免视觉状态与读屏状态不一致。</p>
+      </div>
+      <div class="a11y-card">
+        <span class="a11y-icon" aria-hidden="true">↔</span>
+        <h3>aria-controls 与 aria-hidden</h3>
+        <p>讲义卡通过 <code>aria-controls="tocBody"</code> 关联目录容器；章节行通过 <code>aria-controls="sec-..."</code> 关联自身小节列表，列表的 <code>aria-hidden</code> 随展开状态切换。</p>
+      </div>
+      <div class="a11y-card">
+        <span class="a11y-icon" aria-hidden="true">◉</span>
+        <h3>屏幕阅读器播报</h3>
+        <p>隐藏的 <code>#liveRegion</code> 使用 <code>role="status"</code> 与 <code>aria-live="polite"</code>，在选择讲义和取消选择时播报“已展开……共 N 章、N 节”或“已收起目录”。</p>
+      </div>
+      <div class="a11y-card">
+        <span class="a11y-icon" aria-hidden="true">↗</span>
+        <h3>外链安全与新标签</h3>
+        <p>所有第三方入口与小节 PDF 链接都带 <code>target="_blank"</code> 与 <code>rel="noopener noreferrer"</code>，既保留当前页，也避免新页面通过 <code>window.opener</code> 反向控制本页。</p>
+      </div>
+      <div class="a11y-card">
+        <span class="a11y-icon" aria-hidden="true">Aa</span>
+        <h3>焦点与弹层</h3>
+        <p>全局 <code>:focus-visible</code> 使用 2px 主蓝轮廓、2px 偏移。使用说明采用原生 <code>dialog</code>，带 <code>aria-haspopup="dialog"</code>、<code>aria-controls</code> 与关闭按钮的可读标签；Esc 为浏览器原生行为。</p>
+      </div>
+      <div class="a11y-card">
+        <span class="a11y-icon" aria-hidden="true">◐</span>
+        <h3>对比度与动效偏好</h3>
+        <p>正文对白底约 17:1，辅助文字约 4.76:1，均满足 WCAG AA。开启 <code>prefers-reduced-motion: reduce</code> 时，动画与过渡被压缩到 0.001ms，目录仍可直接使用。</p>
+      </div>
+      <div class="a11y-card" style="grid-column:1/-1">
+        <span class="a11y-icon" aria-hidden="true">PDF</span>
+        <h3>页码口径：PDF 阅读器页码</h3>
+        <p>目录中的 P 数字与 <code>#page=</code> 参数均指 PDF 阅读器页码，不是纸书印刷页码，也不保证与教材页码一致。页脚已明确提示这一点；更新目录时应以 PDF 阅读器左侧缩略图序号为准，而不是照抄纸书目录。</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:18px">
+      <span class="callout-icon" aria-hidden="true">✓</span>
+      <p><strong>交付验收：</strong>本文件双击即可打开，不引用外部 CSS / JS / 字体；6 个板块与顶部锚点导航完整；信息架构图为内联 SVG；色彩、字号、组件状态、断点与可访问性均与当前实现一致；5 张截图使用 <code>./screenshots/</code> 相对路径。</p>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="site-footer">
+  <p>306-mini-book · 设计交付文档 · 2026-11-15 · 依据当前静态站点实现整理</p>
+  <p>本文件使用内联 CSS，无外部脚本与字体依赖；截图位于同目录 screenshots/ 下。</p>
+</footer>
+</body>
+</html>

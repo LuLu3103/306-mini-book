@@ -1,0 +1,2595 @@
+{
+ "generatedAt": "2026-11-15",
+ "pdfBase": "pdf/",
+ "lectures": {
+  "xizong": {
+   "id": "xizong",
+   "name": "西综讲义",
+   "parts": [
+    {
+     "id": "shengli",
+     "name": "生理学",
+     "file": "pdf/xizong-physiology.pdf",
+     "src": "西综讲义PDF\\physiology.pdf",
+     "pages": 383,
+     "chapters": [
+      {
+       "title": "绪论",
+       "page": 3,
+       "sections": [],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "细胞的基本功能",
+       "page": 14,
+       "sections": [
+        {
+         "title": "1.跨膜转运",
+         "page": 14,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串跨膜转运与临床",
+         "page": 24,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "2.细胞电活动",
+         "page": 26,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串钾失衡对横纹肌的影响",
+         "page": 41,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "3.骨骼肌收缩",
+         "page": 43,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "4.细胞信号转导",
+         "page": 57,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串第二信使和蛋白激酶",
+         "page": 71,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "血液",
+       "page": 77,
+       "sections": [
+        {
+         "title": "1.血型",
+         "page": 77,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "2.血液特性",
+         "page": 81,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "3.生理性止血",
+         "page": 90,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "血液循环",
+       "page": 101,
+       "sections": [
+        {
+         "title": "1.心脏泵血",
+         "page": 101,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串心瓣膜病与心动周期",
+         "page": 111,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "2.血压",
+         "page": 112,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串静脉回心血量的影响因素",
+         "page": 117,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "3.微循环和冠脉循环",
+         "page": 118,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串血液循环相关考点的切入点",
+         "page": 122,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "4.心肌电活动和特性",
+         "page": 125,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串儿茶酚胺、乙酰胆碱、 E-4031 对心肌电生理的影响",
+         "page": 136,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "5.心血管调节",
+         "page": 138,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串血管的神经支配",
+         "page": 147,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "呼吸",
+       "page": 152,
+       "sections": [
+        {
+         "title": "1.通气功能的评价",
+         "page": 152,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "2.肺通气",
+         "page": 156,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串本节小结和临床联系",
+         "page": 163,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "3.肺换气和气体运输",
+         "page": 167,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串CO中毒",
+         "page": 175,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "4.呼吸调节",
+         "page": 179,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "消化",
+       "page": 185,
+       "sections": [
+        {
+         "title": "1.消化概述",
+         "page": 185,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串肌细胞的收缩",
+         "page": 187,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "2.口腔和食管的消化",
+         "page": 190,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "3.胃内消化",
+         "page": 193,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "4.肠内消化",
+         "page": 204,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串消化小结",
+         "page": 210,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "5.肠内吸收",
+         "page": 213,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "能量代谢和体温",
+       "page": 217,
+       "sections": [],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "泌尿",
+       "page": 227,
+       "sections": [
+        {
+         "title": "1.泌尿概述",
+         "page": 227,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "2.肾小球滤过",
+         "page": 235,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "3.小管重吸收和分泌、尿浓缩稀释、调节",
+         "page": 242,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串利尿剂",
+         "page": 260,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "感觉器官的功能",
+       "page": 262,
+       "sections": [
+        {
+         "title": "1.视觉",
+         "page": 262,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串视觉传入通路",
+         "page": 273,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "2.听觉",
+         "page": 277,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "3.其它感觉",
+         "page": 288,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "神经系统",
+       "page": 297,
+       "sections": [
+        {
+         "title": "1.神经元及胶质细胞",
+         "page": 297,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串脊髓病变",
+         "page": 302,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "2.突触传递、中枢抑制和易化",
+         "page": 304,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "3.递质和受体",
+         "page": 314,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "4.神经系统调控躯体运动",
+         "page": 320,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串肌紧张/肌张力",
+         "page": 334,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "5.脑电波、睡眠、脑高级功能、下丘脑",
+         "page": 337,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串下丘脑",
+         "page": 340,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "内分泌",
+       "page": 343,
+       "sections": [
+        {
+         "title": "1.内分泌概述",
+         "page": 343,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "2.钙调节激素",
+         "page": 348,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "3.生长激素",
+         "page": 352,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "4.胰岛素和胰高血糖素",
+         "page": 355,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "5.甲状腺激素",
+         "page": 361,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "6.糖皮质激素",
+         "page": 367,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      },
+      {
+       "title": "生殖",
+       "page": 373,
+       "sections": [
+        {
+         "title": "1.生殖",
+         "page": 373,
+         "file": "pdf/xizong-physiology.pdf"
+        },
+        {
+         "title": "串女性雌激素的来源理笔记录",
+         "page": 379,
+         "file": "pdf/xizong-physiology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-physiology.pdf"
+      }
+     ]
+    },
+    {
+     "id": "shenghua",
+     "name": "生物化学",
+     "file": "pdf/xizong-biochem.pdf",
+     "src": "西综讲义PDF\\biochem.pdf",
+     "pages": 170,
+     "chapters": [
+      {
+       "title": "物质代谢",
+       "page": 3,
+       "sections": [
+        {
+         "title": "1.糖无氧氧化&糖有氧氧化",
+         "page": 3,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "串·红细胞代谢&高能化合物",
+         "page": 9,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "2.磷酸戊糖途径、糖原、糖异生",
+         "page": 13,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "串·糖代谢小结",
+         "page": 15,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "3.氧化磷酸化",
+         "page": 19,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "串·葡萄糖有氧氧化的能量计算",
+         "page": 24,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "4.血浆脂蛋白",
+         "page": 27,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "5.磷脂代谢、胆固醇代谢和胆汁酸",
+         "page": 31,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "6.脂肪代谢",
+         "page": 36,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "7.氨基酸代谢",
+         "page": 45,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "串·氨基酸（见思维导图氨基酸）",
+         "page": 50,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "8.蛋白质",
+         "page": 59,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "9.核苷酸代谢",
+         "page": 66,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "串·核苷酸抗代谢物",
+         "page": 71,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "10.胆色素代谢",
+         "page": 75,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "11.生物转化",
+         "page": 79,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "12.酶",
+         "page": 81,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "串·酶在医学上的作用",
+         "page": 89,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "13.维生素",
+         "page": 90,
+         "file": "pdf/xizong-biochem.pdf"
+        }
+       ],
+       "file": "pdf/xizong-biochem.pdf"
+      },
+      {
+       "title": "分子生物学与基因表达",
+       "page": 93,
+       "sections": [
+        {
+         "title": "1. 原癌基因&抑癌基因、基因重组、分子生物学技术",
+         "page": 93,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "2.核酸",
+         "page": 105,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "3.DNA的合成",
+         "page": 115,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "串·DNA复制VS转录",
+         "page": 128,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "4.转录",
+         "page": 128,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "5.翻译",
+         "page": 139,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "6.基因表达的调控",
+         "page": 151,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "7.真核基因",
+         "page": 165,
+         "file": "pdf/xizong-biochem.pdf"
+        },
+        {
+         "title": "8.DNA损伤",
+         "page": 168,
+         "file": "pdf/xizong-biochem.pdf"
+        }
+       ],
+       "file": "pdf/xizong-biochem.pdf"
+      }
+     ]
+    },
+    {
+     "id": "bingli",
+     "name": "病理学",
+     "file": "pdf/xizong-pathology.pdf",
+     "src": "西综讲义PDF\\pathology.pdf",
+     "pages": 195,
+     "chapters": [
+      {
+       "title": "消化系统",
+       "page": 2,
+       "sections": [
+        {
+         "title": "1.慢性胃炎、消化性溃疡、阑尾炎、胰腺疾病",
+         "page": 2,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "2.病毒性肝炎",
+         "page": 7,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "3.肝硬化",
+         "page": 14,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "4.原发性肝癌",
+         "page": 21,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "串·消化系统恶性肿瘤概述",
+         "page": 23,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "5.消化道肿瘤",
+         "page": 25,
+         "file": "pdf/xizong-pathology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-pathology.pdf"
+      },
+      {
+       "title": "心血管",
+       "page": 35,
+       "sections": [
+        {
+         "title": "1.感染性心内膜炎",
+         "page": 35,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "2.风湿病",
+         "page": 36,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "3.高血压",
+         "page": 40,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "4.动脉粥样硬化",
+         "page": 43,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "5.心肌疾病",
+         "page": 50,
+         "file": "pdf/xizong-pathology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-pathology.pdf"
+      },
+      {
+       "title": "呼吸系统疾病",
+       "page": 55,
+       "sections": [
+        {
+         "title": "1.慢支炎、肺气肿、肺心病",
+         "page": 55,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "2.支扩",
+         "page": 69,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "3.肺硅沉着病",
+         "page": 71,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "4.肺炎",
+         "page": 73,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "5.呼吸系统肿瘤",
+         "page": 78,
+         "file": "pdf/xizong-pathology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-pathology.pdf"
+      },
+      {
+       "title": "内分泌系统疾病",
+       "page": 82,
+       "sections": [],
+       "file": "pdf/xizong-pathology.pdf"
+      },
+      {
+       "title": "免疫性疾病",
+       "page": 88,
+       "sections": [],
+       "file": "pdf/xizong-pathology.pdf"
+      },
+      {
+       "title": "生殖系统疾病",
+       "page": 96,
+       "sections": [],
+       "file": "pdf/xizong-pathology.pdf"
+      },
+      {
+       "title": "乳腺疾病",
+       "page": 108,
+       "sections": [],
+       "file": "pdf/xizong-pathology.pdf"
+      },
+      {
+       "title": "传染",
+       "page": 111,
+       "sections": [
+        {
+         "title": "1.结核",
+         "page": 111,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "2.其它传染病",
+         "page": 119,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "串·常考溃疡",
+         "page": 124,
+         "file": "pdf/xizong-pathology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-pathology.pdf"
+      },
+      {
+       "title": "病理学总论",
+       "page": 126,
+       "sections": [
+        {
+         "title": "1.损伤的修复",
+         "page": 126,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "2.适应和损伤",
+         "page": 133,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "①适应",
+         "page": 133,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "②可逆性损伤/变性",
+         "page": 137,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "③坏死",
+         "page": 141,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "3.局部血液循环障碍",
+         "page": 152,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "4.炎症",
+         "page": 162,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "串·常考肉芽肿",
+         "page": 173,
+         "file": "pdf/xizong-pathology.pdf"
+        },
+        {
+         "title": "5.肿瘤",
+         "page": 175,
+         "file": "pdf/xizong-pathology.pdf"
+        }
+       ],
+       "file": "pdf/xizong-pathology.pdf"
+      }
+     ]
+    },
+    {
+     "id": "neike",
+     "name": "内科学",
+     "file": "pdf/xizong-internal.pdf",
+     "src": "西综讲义PDF\\internal.pdf",
+     "pages": 397,
+     "chapters": [
+      {
+       "title": "呼吸系统",
+       "page": 3,
+       "sections": [
+        {
+         "title": "1.COPD",
+         "page": 3,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·呼吸系统重要体征（上）",
+         "page": 12,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "2.肺动脉高压",
+         "page": 14,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "3.急性肺血栓栓塞",
+         "page": 19,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "4.间质性肺疾病",
+         "page": 24,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "5.支气管扩张症",
+         "page": 29,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·支扩的鉴别诊断",
+         "page": 32,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "6.急性肺脓肿",
+         "page": 33,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "7.肺炎",
+         "page": 35,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·呼吸系统疾病好发部位",
+         "page": 41,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "8.肺结核",
+         "page": 42,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·热型",
+         "page": 46,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "9.支气管哮喘",
+         "page": 49,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·支气管哮喘的鉴别诊断",
+         "page": 55,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "10.ARDS",
+         "page": 56,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "11.呼吸衰竭",
+         "page": 60,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·判断酸碱失衡",
+         "page": 62,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "12.肺癌",
+         "page": 63,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·肺癌TNM分期",
+         "page": 66,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "13.胸膜疾病",
+         "page": 69,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·呼吸系统疾病重要体征（下）",
+         "page": 78,
+         "file": "pdf/xizong-internal.pdf"
+        }
+       ],
+       "file": "pdf/xizong-internal.pdf"
+      },
+      {
+       "title": "消化系统",
+       "page": 80,
+       "sections": [
+        {
+         "title": "1.胃食管反流",
+         "page": 80,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "2.胃炎",
+         "page": 85,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·HP",
+         "page": 86,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "3.消化性溃疡 & 消化道出血",
+         "page": 88,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "4. 肠结核 & 结核性腹膜炎",
+         "page": 100,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "5.炎症性肠病",
+         "page": 103,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串· 肠结核 VS 克罗恩病 VS 溃疡性结肠炎",
+         "page": 106,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "6.肠易激综合征",
+         "page": 110,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串· 需要内镜确诊（并可活检）的消化系统疾病",
+         "page": 112,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "7. 肝性脑病",
+         "page": 113,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "8.原发性肝细胞癌",
+         "page": 117,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·肝脏疾病影像学",
+         "page": 119,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "9.肝硬化",
+         "page": 124,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "10.急性胰腺炎",
+         "page": 135,
+         "file": "pdf/xizong-internal.pdf"
+        }
+       ],
+       "file": "pdf/xizong-internal.pdf"
+      },
+      {
+       "title": "泌尿系统疾病",
+       "page": 145,
+       "sections": [
+        {
+         "title": "1.泌尿系统总论",
+         "page": 145,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "2.尿路感染",
+         "page": 147,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "3.肾衰竭",
+         "page": 153,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串· 透析",
+         "page": 156,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "4.原发性肾小球疾病（含病理）",
+         "page": 159,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串· 原发性肾小球疾病的常考病例题",
+         "page": 169,
+         "file": "pdf/xizong-internal.pdf"
+        }
+       ],
+       "file": "pdf/xizong-internal.pdf"
+      },
+      {
+       "title": "血液系统",
+       "page": 182,
+       "sections": [
+        {
+         "title": "1.缺铁性贫血",
+         "page": 182,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·贫血概述",
+         "page": 184,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "2.再生障碍性贫血",
+         "page": 189,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "3.溶血性贫血",
+         "page": 192,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "4.出血性疾病（原发免疫性血小板减少症 & 出血性疾病概述）",
+         "page": 199,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "5.骨髓瘤 MM",
+         "page": 205,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "6.骨髓增生异常性肿瘤/综合征 MDS",
+         "page": 208,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·MDS 鉴别诊断",
+         "page": 210,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "7.白血病",
+         "page": 211,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·血液系统疾病鉴别诊断",
+         "page": 219,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "8.淋巴瘤（含病理）",
+         "page": 221,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·特征染色体和免疫表型小结",
+         "page": 226,
+         "file": "pdf/xizong-internal.pdf"
+        }
+       ],
+       "file": "pdf/xizong-internal.pdf"
+      },
+      {
+       "title": "内分泌系统",
+       "page": 232,
+       "sections": [
+        {
+         "title": "1.Graves病",
+         "page": 232,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·特殊类型甲亢",
+         "page": 236,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "2.甲状腺功能减退症",
+         "page": 241,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "3.原发性醛固酮增多症",
+         "page": 244,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "4.嗜铬细胞瘤",
+         "page": 246,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "5.库欣综合征",
+         "page": 249,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "6.内分泌系统总论",
+         "page": 253,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "7.糖尿病",
+         "page": 255,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·糖尿病治疗药物小结",
+         "page": 264,
+         "file": "pdf/xizong-internal.pdf"
+        }
+       ],
+       "file": "pdf/xizong-internal.pdf"
+      },
+      {
+       "title": "风湿",
+       "page": 271,
+       "sections": [
+        {
+         "title": "1.风湿系统总论",
+         "page": 271,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "2.SLE",
+         "page": 274,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "3.类风湿关节炎",
+         "page": 278,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "4.原发性干燥综合征",
+         "page": 282,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "5.系统性血管炎",
+         "page": 284,
+         "file": "pdf/xizong-internal.pdf"
+        }
+       ],
+       "file": "pdf/xizong-internal.pdf"
+      },
+      {
+       "title": "中毒",
+       "page": 288,
+       "sections": [],
+       "file": "pdf/xizong-internal.pdf"
+      },
+      {
+       "title": "循环系统",
+       "page": 295,
+       "sections": [
+        {
+         "title": "1.心肌疾病",
+         "page": 295,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "2.心包疾病",
+         "page": 300,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "3.感染性心内膜炎",
+         "page": 306,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "4.高血压",
+         "page": 310,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·高血压一线药 ABCD",
+         "page": 315,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串· 循环系统重要表现",
+         "page": 317,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "5.心瓣膜病",
+         "page": 321,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "6.冠心病",
+         "page": 331,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "7.收缩性心衰",
+         "page": 354,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串· 心衰的治疗",
+         "page": 358,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "8.心律失常",
+         "page": 365,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "串·心律失常的治疗原则和常考心电图",
+         "page": 388,
+         "file": "pdf/xizong-internal.pdf"
+        },
+        {
+         "title": "9.心脏骤停",
+         "page": 396,
+         "file": "pdf/xizong-internal.pdf"
+        }
+       ],
+       "file": "pdf/xizong-internal.pdf"
+      }
+     ]
+    },
+    {
+     "id": "waike",
+     "name": "外科学",
+     "file": "pdf/xizong-surgery1.pdf",
+     "src": "西综讲义PDF\\surgery1.pdf",
+     "pages": 143,
+     "chapters": [
+      {
+       "title": "颈部和胸部疾病",
+       "page": 3,
+       "sections": [
+        {
+         "title": "1.颈部疾病",
+         "page": 3,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "串·甲状腺相关疾病和用药",
+         "page": 8,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "2.食管疾病",
+         "page": 16,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "3.乳腺癌",
+         "page": 20,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "串·乳房疾病鉴别",
+         "page": 23,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "4.其它颈胸部疾病",
+         "page": 29,
+         "file": "pdf/xizong-surgery1.pdf"
+        }
+       ],
+       "file": "pdf/xizong-surgery1.pdf"
+      },
+      {
+       "title": "腹部和肠道疾病",
+       "page": 33,
+       "sections": [
+        {
+         "title": "1.胃肿瘤",
+         "page": 33,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "串·胃癌的TNM分期",
+         "page": 36,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "2.腹腔感染",
+         "page": 38,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "3.腹部损伤",
+         "page": 41,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "4.肠梗阻",
+         "page": 49,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "5.急性阑尾炎",
+         "page": 56,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "6.大肠癌",
+         "page": 62,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "7.其它大肠与肛管疾病",
+         "page": 68,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "串·直肠指检",
+         "page": 71,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "8.腹外疝",
+         "page": 74,
+         "file": "pdf/xizong-surgery1.pdf"
+        }
+       ],
+       "file": "pdf/xizong-surgery1.pdf"
+      },
+      {
+       "title": "肝胆胰脾疾病",
+       "page": 83,
+       "sections": [
+        {
+         "title": "1.细菌性肝脓肿",
+         "page": 83,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "串·肝解剖",
+         "page": 84,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "2.门脉高压症",
+         "page": 87,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "3.胰腺肿瘤",
+         "page": 94,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "4.胆系疾病",
+         "page": 99,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "串·黄疸有没有&胆囊大不大",
+         "page": 109,
+         "file": "pdf/xizong-surgery1.pdf"
+        }
+       ],
+       "file": "pdf/xizong-surgery1.pdf"
+      },
+      {
+       "title": "血管和泌外疾病",
+       "page": 124,
+       "sections": [
+        {
+         "title": "1.周围血管疾病",
+         "page": 124,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "2. 泌外感染和肿瘤",
+         "page": 129,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "串·尿三杯",
+         "page": 131,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "3.泌外梗阻和外伤",
+         "page": 134,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "串·尿失禁",
+         "page": 138,
+         "file": "pdf/xizong-surgery1.pdf"
+        }
+       ],
+       "file": "pdf/xizong-surgery1.pdf"
+      },
+      {
+       "title": "骨科合集",
+       "page": 143,
+       "sections": [
+        {
+         "title": "1.运动系统畸形",
+         "page": 143,
+         "file": "pdf/xizong-surgery1.pdf"
+        },
+        {
+         "title": "2.运动系统慢性损伤",
+         "page": 5,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "3.手外伤、股骨头坏死、膝关节损伤、神经损伤",
+         "page": 10,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "4.骨与关节感染",
+         "page": 20,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "5.非化脓性关节炎",
+         "page": 29,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "串·非化脓性关节炎鉴别诊断",
+         "page": 30,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "6.骨肿瘤",
+         "page": 34,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "串·骨肿瘤概述",
+         "page": 34,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "7.躯干骨骨折&脊髓损伤",
+         "page": 43,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "8.颈腰椎退行性疾病",
+         "page": 51,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "串·脊髓神经损伤平面判断",
+         "page": 58,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "9.四肢骨折和脱位",
+         "page": 63,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "10.骨折概论",
+         "page": 83,
+         "file": "pdf/xizong-surgery2.pdf"
+        }
+       ],
+       "file": "pdf/xizong-surgery1.pdf"
+      },
+      {
+       "title": "外科总论",
+       "page": 91,
+       "file": "pdf/xizong-surgery2.pdf",
+       "sections": [
+        {
+         "title": "1.输血",
+         "page": 91,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "2.体液失衡",
+         "page": 94,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "3.营养代谢",
+         "page": 100,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "4.烧伤",
+         "page": 105,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "5.感染",
+         "page": 110,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "6.围术期",
+         "page": 119,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "串·常考伤口小结",
+         "page": 122,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "7.麻醉",
+         "page": 125,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "8.休克",
+         "page": 134,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "串·常考疾病休克小结",
+         "page": 137,
+         "file": "pdf/xizong-surgery2.pdf"
+        },
+        {
+         "title": "9.其它外科总论",
+         "page": 140,
+         "file": "pdf/xizong-surgery2.pdf"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "kuangbei": {
+   "id": "kuangbei",
+   "name": "狂背讲义",
+   "parts": [
+    {
+     "id": "kb-neike",
+     "name": "内科（含诊断+部分外科）",
+     "file": "pdf/kb-neike.pdf",
+     "src": "狂背讲义PDF\\狂背【内科含诊断+部分外科】.pdf",
+     "pages": 73,
+     "chapters": [
+      {
+       "title": "呼吸系统疾病",
+       "page": 2,
+       "sections": [
+        {
+         "title": "慢性阻塞性肺疾病COPD",
+         "page": 2,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "慢性肺心病",
+         "page": 4,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "特发性肺动脉高压",
+         "page": 4,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "急性肺血栓栓塞",
+         "page": 5,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "支气管哮喘",
+         "page": 6,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "支气管扩张症",
+         "page": 8,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "吸入性肺脓肿",
+         "page": 9,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "血源性肺脓肿",
+         "page": 9,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肺炎",
+         "page": 10,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肺结核",
+         "page": 12,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "间质性肺病",
+         "page": 14,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "急性呼吸窘迫综合征ARDS",
+         "page": 15,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肺癌（内科+外科）",
+         "page": 16,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "胸膜疾病",
+         "page": 17,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "呼吸衰竭",
+         "page": 18,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "阻塞性 VS 限制性通气障碍",
+         "page": 19,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "低氧血症最主要的机制",
+         "page": 19,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "判断酸碱失衡",
+         "page": 19,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "呼吸系统重要表现",
+         "page": 20,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "呼吸系统重要表现",
+         "page": 21,
+         "file": "pdf/kb-neike.pdf"
+        }
+       ],
+       "file": "pdf/kb-neike.pdf"
+      },
+      {
+       "title": "循环系统疾病",
+       "page": 22,
+       "sections": [
+        {
+         "title": "慢性左心衰",
+         "page": 22,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "急性左心衰",
+         "page": 23,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "心衰评定",
+         "page": 24,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "心律失常",
+         "page": 25,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "原发性高血压",
+         "page": 27,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "继发性高血压",
+         "page": 27,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "冠心病",
+         "page": 28,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肥厚型心肌病",
+         "page": 31,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "扩张型心肌病",
+         "page": 31,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "病毒性心肌炎",
+         "page": 31,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "心包炎",
+         "page": 32,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "缩窄性心包炎",
+         "page": 32,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "心瓣膜病",
+         "page": 33,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "亚急性感染性心内膜炎",
+         "page": 35,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "心脏骤停（内科+外科）",
+         "page": 35,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "循环系统重要表现",
+         "page": 36,
+         "file": "pdf/kb-neike.pdf"
+        }
+       ],
+       "file": "pdf/kb-neike.pdf"
+      },
+      {
+       "title": "消化系统疾病",
+       "page": 38,
+       "sections": [
+        {
+         "title": "胃食管反流病",
+         "page": 38,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "慢性胃炎",
+         "page": 38,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "消化性溃疡（内科+外科）",
+         "page": 39,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肠结核",
+         "page": 40,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "结核性腹膜炎",
+         "page": 40,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "炎症性肠病",
+         "page": 41,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肠易激综合征",
+         "page": 42,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肝硬化",
+         "page": 43,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肝性脑病",
+         "page": 44,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "原发性肝细胞癌（内科+外科）",
+         "page": 45,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "急性胰腺炎（内科+外科）",
+         "page": 46,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "慢性胰腺炎",
+         "page": 47,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "上消化道出血（内科+外科）",
+         "page": 47,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "消化系统其它需关注的点",
+         "page": 48,
+         "file": "pdf/kb-neike.pdf"
+        }
+       ],
+       "file": "pdf/kb-neike.pdf"
+      },
+      {
+       "title": "泌尿系统疾病",
+       "page": 49,
+       "sections": [
+        {
+         "title": "泌尿系统总论",
+         "page": 49,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肾炎综合征",
+         "page": 50,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "肾病综合征",
+         "page": 50,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "IgA肾病",
+         "page": 51,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "隐匿性肾炎",
+         "page": 51,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "尿路感染",
+         "page": 52,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "急性肾损伤",
+         "page": 53,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "慢性肾衰竭",
+         "page": 53,
+         "file": "pdf/kb-neike.pdf"
+        }
+       ],
+       "file": "pdf/kb-neike.pdf"
+      },
+      {
+       "title": "血液系统疾病",
+       "page": 54,
+       "sections": [
+        {
+         "title": "缺铁贫 巨幼贫",
+         "page": 56,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "AML鉴别",
+         "page": 56,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "缺铁贫鉴别诊断",
+         "page": 57,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "贫血：Hb男＜120、女＜110、孕妇＜100",
+         "page": 58,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "骨髓瘤分期",
+         "page": 58,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "淋巴瘤分期",
+         "page": 58,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "特征染色体和免疫表型小结",
+         "page": 59,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "溶血性贫血（贫血、黄疸-尿深、脾常大）",
+         "page": 59,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "出血性疾病概述",
+         "page": 60,
+         "file": "pdf/kb-neike.pdf"
+        }
+       ],
+       "file": "pdf/kb-neike.pdf"
+      },
+      {
+       "title": "内分泌系统疾病",
+       "page": 62,
+       "sections": [
+        {
+         "title": "内分泌系统总论",
+         "page": 62,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "甲减",
+         "page": 62,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "Graves病",
+         "page": 63,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "库欣综合征",
+         "page": 64,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "原发性醛固酮增多症",
+         "page": 65,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "嗜铬细胞瘤",
+         "page": 65,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "糖尿病",
+         "page": 66,
+         "file": "pdf/kb-neike.pdf"
+        }
+       ],
+       "file": "pdf/kb-neike.pdf"
+      },
+      {
+       "title": "风湿系统疾病",
+       "page": 69,
+       "sections": [
+        {
+         "title": "风湿系统总论",
+         "page": 69,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "类风湿关节炎（内科+外科）",
+         "page": 69,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "系统性红斑狼疮",
+         "page": 70,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "原发性干燥综合征",
+         "page": 71,
+         "file": "pdf/kb-neike.pdf"
+        },
+        {
+         "title": "系统性血管炎",
+         "page": 71,
+         "file": "pdf/kb-neike.pdf"
+        }
+       ],
+       "file": "pdf/kb-neike.pdf"
+      },
+      {
+       "title": "中毒",
+       "page": 72,
+       "sections": [
+        {
+         "title": "前列腺素小结",
+         "page": 72,
+         "file": "pdf/kb-neike.pdf"
+        }
+       ],
+       "file": "pdf/kb-neike.pdf"
+      },
+      {
+       "title": "纯诊断学其他内容",
+       "page": 73,
+       "sections": [
+        {
+         "title": "步态",
+         "page": 73,
+         "file": "pdf/kb-neike.pdf"
+        }
+       ],
+       "file": "pdf/kb-neike.pdf"
+      }
+     ]
+    },
+    {
+     "id": "kb-jichu",
+     "name": "基础学科横向大串联",
+     "file": "pdf/kb-jichu.pdf",
+     "src": "狂背讲义PDF\\狂背【基础学科横向大串联】.pdf",
+     "pages": 49,
+     "chapters": [
+      {
+       "title": "生物化学",
+       "page": 2,
+       "sections": [
+        {
+         "title": "生物化学循环大串讲",
+         "page": 2,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生物化学物质代谢的酶大串讲",
+         "page": 4,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "相似酶辨析",
+         "page": 6,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "参与氧化脱羧（脱氢+脱羧）",
+         "page": 8,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "酶的抑制剂",
+         "page": 8,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生物化学代谢部位小结 & 肝中主要代谢途径大串讲",
+         "page": 9,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生物化学维生素大串讲",
+         "page": 10,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生物化学基因大串讲",
+         "page": 11,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "序列小结",
+         "page": 12,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生物化学能量小结",
+         "page": 13,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生物化学各种化小结",
+         "page": 14,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生物化学甘氨酸大串讲",
+         "page": 15,
+         "file": "pdf/kb-jichu.pdf"
+        }
+       ],
+       "file": "pdf/kb-jichu.pdf"
+      },
+      {
+       "title": "病理学",
+       "page": 17,
+       "sections": [
+        {
+         "title": "病理学常考好发部位",
+         "page": 17,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "病理学常考最字题",
+         "page": 18,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "病理学常考重要细胞",
+         "page": 20,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "病理学常考重要小体",
+         "page": 21,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "常考溃疡",
+         "page": 22,
+         "file": "pdf/kb-jichu.pdf"
+        }
+       ],
+       "file": "pdf/kb-jichu.pdf"
+      },
+      {
+       "title": "生理学",
+       "page": 23,
+       "sections": [
+        {
+         "title": "生理学中枢小结",
+         "page": 23,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学自身调节小结",
+         "page": 25,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学跨膜转运对比",
+         "page": 25,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学钾失衡对横纹肌的影响",
+         "page": 26,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学神经-肌接头和兴奋-收缩耦联小结",
+         "page": 26,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学&生物化学细胞信号转导小结",
+         "page": 27,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学凝血、抗板、抗凝、溶栓小结",
+         "page": 28,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学心室压力-容积环",
+         "page": 29,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学静脉回心血量的影响因素大串讲",
+         "page": 30,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学横纹肌大串讲",
+         "page": 31,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学RAAS",
+         "page": 32,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学肺通气大串讲",
+         "page": 34,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学CO中毒大串讲",
+         "page": 35,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学化学性消化和机械性消化小结",
+         "page": 36,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学三种常考的胃肠激素小结",
+         "page": 36,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学能量代谢和体温",
+         "page": 37,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学肾小球滤过的影响因素",
+         "page": 38,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学使肾浓缩功能的因素举例",
+         "page": 39,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学利尿剂小结",
+         "page": 39,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学视锥细胞 VS 视杆细胞",
+         "page": 40,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学听觉小结",
+         "page": 40,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学化学突触传递的影响因素小结",
+         "page": 41,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学突触前抑制 VS 突触后抑制",
+         "page": 41,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学交感神经兴奋大串讲",
+         "page": 42,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学受体介导的效应大串讲",
+         "page": 42,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学牵张反射",
+         "page": 43,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学肌紧张大串讲",
+         "page": 44,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学激素主要来源大串讲",
+         "page": 45,
+         "file": "pdf/kb-jichu.pdf"
+        },
+        {
+         "title": "生理学激素作用大串讲",
+         "page": 48,
+         "file": "pdf/kb-jichu.pdf"
+        }
+       ],
+       "file": "pdf/kb-jichu.pdf"
+      }
+     ]
+    },
+    {
+     "id": "kb-waike",
+     "name": "外科+横向大串联",
+     "file": "pdf/kb-waike.pdf",
+     "src": "狂背讲义PDF\\狂背【外科+横向大串联 】.pdf",
+     "pages": 61,
+     "chapters": [
+      {
+       "title": "外科总论",
+       "page": 2,
+       "sections": [
+        {
+         "title": "体液失衡",
+         "page": 2,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "输血",
+         "page": 3,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "休克",
+         "page": 3,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "常考疾病休克小结",
+         "page": 4,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "麻醉",
+         "page": 5,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "围术期",
+         "page": 6,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "营养代谢",
+         "page": 7,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "烧伤",
+         "page": 8,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "外科感染",
+         "page": 9,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "有芽孢厌氧菌（G+杆菌外毒素）感染",
+         "page": 10,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "脓肿切开引流小结",
+         "page": 11,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "常考致病菌小结",
+         "page": 11,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "常考抗生素小结",
+         "page": 12,
+         "file": "pdf/kb-waike.pdf"
+        }
+       ],
+       "file": "pdf/kb-waike.pdf"
+      },
+      {
+       "title": "颈部和胸部疾病",
+       "page": 13,
+       "sections": [
+        {
+         "title": "甲状腺相关疾病的可能可能最可能",
+         "page": 13,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "甲状腺相关疾病的手术",
+         "page": 14,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "甲状腺癌",
+         "page": 14,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "小结甲状腺相关疾病的用药",
+         "page": 15,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "常考的甲状腺疾病切除范围",
+         "page": 15,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "甲状旁腺功能亢进",
+         "page": 15,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "乳腺癌",
+         "page": 16,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "其它乳房疾病",
+         "page": 17,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "胸部损伤",
+         "page": 18,
+         "file": "pdf/kb-waike.pdf"
+        }
+       ],
+       "file": "pdf/kb-waike.pdf"
+      },
+      {
+       "title": "腹部和肠道疾病",
+       "page": 19,
+       "sections": [
+        {
+         "title": "继发性腹膜炎",
+         "page": 19,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "胃癌",
+         "page": 19,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "腹部损伤的可能可能最可能",
+         "page": 20,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "腹部损伤的检查",
+         "page": 20,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "腹外疝",
+         "page": 21,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "肠梗阻",
+         "page": 22,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "急性阑尾炎",
+         "page": 23,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "大肠癌",
+         "page": 24,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "直肠肛管周围脓肿",
+         "page": 24,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "直肠指检",
+         "page": 25,
+         "file": "pdf/kb-waike.pdf"
+        }
+       ],
+       "file": "pdf/kb-waike.pdf"
+      },
+      {
+       "title": "肝胆胰脾疾病",
+       "page": 26,
+       "sections": [
+        {
+         "title": "门脉高压症",
+         "page": 26,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "细菌性肝脓肿",
+         "page": 26,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "胆系疾病和胰头癌的可能可能最可能",
+         "page": 27,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "胆系疾病的检查",
+         "page": 28,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "胆总管探查术",
+         "page": 28,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "其它胰腺肿瘤",
+         "page": 29,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "三角小结",
+         "page": 29,
+         "file": "pdf/kb-waike.pdf"
+        }
+       ],
+       "file": "pdf/kb-waike.pdf"
+      },
+      {
+       "title": "血管和泌外疾病",
+       "page": 30,
+       "sections": [
+        {
+         "title": "血管外科疾病",
+         "page": 30,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "尿三杯",
+         "page": 31,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "泌外恶性肿瘤",
+         "page": 31,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "前列腺增生",
+         "page": 32,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "泌尿系结石",
+         "page": 32,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "泌尿系外伤",
+         "page": 33,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "鞘膜腔积液",
+         "page": 33,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "隐睾",
+         "page": 33,
+         "file": "pdf/kb-waike.pdf"
+        }
+       ],
+       "file": "pdf/kb-waike.pdf"
+      },
+      {
+       "title": "骨科疾病",
+       "page": 34,
+       "sections": [
+        {
+         "title": "骨科概述",
+         "page": 34,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "骨科的可能可能最可能",
+         "page": 36,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "原发性骨肿瘤",
+         "page": 41,
+         "file": "pdf/kb-waike.pdf"
+        }
+       ],
+       "file": "pdf/kb-waike.pdf"
+      },
+      {
+       "title": "横向大串联（英文·检查·分度分期）",
+       "page": 42,
+       "sections": [
+        {
+         "title": "外科英文小结",
+         "page": 42,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "检查狂串",
+         "page": 49,
+         "file": "pdf/kb-waike.pdf"
+        },
+        {
+         "title": "分度分型分期狂串",
+         "page": 54,
+         "file": "pdf/kb-waike.pdf"
+        }
+       ],
+       "file": "pdf/kb-waike.pdf"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
