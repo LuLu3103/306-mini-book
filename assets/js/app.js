@@ -10,6 +10,7 @@
   var tocName = document.getElementById("tocName");
   var tocMeta = document.getElementById("tocMeta");
   var tocBody = document.getElementById("tocBody");
+  var tocTabs = document.getElementById("tocTabs");
   var toggleAll = document.getElementById("toggleAll");
   var live = document.getElementById("liveRegion");
   var cards = Array.prototype.slice.call(document.querySelectorAll(".lec-card"));
@@ -19,7 +20,7 @@
     ' stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>';
 
   var EMPTY_HTML = tocBody.innerHTML;
-  var state = { lecture: null };
+  var state = { lecture: null, part: null };
 
   if (!DATA || !DATA.lectures) {
     tocBody.innerHTML =
@@ -82,45 +83,65 @@
     );
   }
 
-  function render(lec) {
-    var index = 0;
+  function partById(lec, partId) {
+    for (var i = 0; i < lec.parts.length; i++) {
+      if (lec.parts[i].id === partId) return lec.parts[i];
+    }
+    return lec.parts[0];
+  }
+
+  function renderPart(lec, part) {
     var html = "";
+    part.chapters.forEach(function (ch, idx) {
+      var num = idx + 1;
+      var no = num < 10 ? "0" + num : String(num);
+      var listId = "sec-" + lec.id + "-" + part.id + "-" + num;
+      var hasSec = ch.sections && ch.sections.length > 0;
+      var bodyHtml = hasSec ? ch.sections.map(sectionHtml).join("") : emptyChapterHtml(ch);
 
-    lec.parts.forEach(function (part) {
-      if (!part.chapters.length) return;
       html +=
-        '<div class="part-head">' +
-        '<span class="part-dot" aria-hidden="true"></span>' +
-        '<span class="part-name">' + esc(part.name) + "</span>" +
-        '<span class="part-meta">' + part.chapters.length + " 章 · " + (part.pages || "-") + " 页</span>" +
+        '<div class="chapter">' +
+        '<button class="ch-row" type="button" aria-expanded="false" aria-controls="' + listId + '">' +
+        '<span class="ch-no" aria-hidden="true">' + no + "</span>" +
+        '<span class="ch-title">' + esc(ch.title) + "</span>" +
+        '<span class="ch-count">' + (hasSec ? ch.sections.length + " 节" : "—") + "</span>" +
+        '<span class="ch-page">P' + (ch.srcPage || ch.page) + "</span>" +
+        '<span class="ch-arrow" aria-hidden="true">' + CHEVRON + "</span>" +
+        "</button>" +
+        '<div class="sec-list" id="' + listId + '" aria-hidden="true"><div class="sec-inner">' +
+        bodyHtml +
+        "</div></div>" +
         "</div>";
-
-      part.chapters.forEach(function (ch) {
-        index += 1;
-        var no = index < 10 ? "0" + index : String(index);
-        var listId = "sec-" + lec.id + "-" + index;
-        var hasSec = ch.sections && ch.sections.length > 0;
-        var bodyHtml = hasSec
-          ? ch.sections.map(sectionHtml).join("")
-          : emptyChapterHtml(ch);
-
-        html +=
-          '<div class="chapter">' +
-          '<button class="ch-row" type="button" aria-expanded="false" aria-controls="' + listId + '">' +
-          '<span class="ch-no" aria-hidden="true">' + no + "</span>" +
-          '<span class="ch-title">' + esc(ch.title) + "</span>" +
-          '<span class="ch-count">' + (hasSec ? ch.sections.length + " 节" : "—") + "</span>" +
-          '<span class="ch-page">P' + (ch.srcPage || ch.page) + "</span>" +
-          '<span class="ch-arrow" aria-hidden="true">' + CHEVRON + "</span>" +
-          "</button>" +
-          '<div class="sec-list" id="' + listId + '" aria-hidden="true"><div class="sec-inner">' +
-          bodyHtml +
-          "</div></div>" +
-          "</div>";
-      });
     });
-
     return html;
+  }
+
+  function renderTabs(lec, activeId) {
+    return lec.parts
+      .map(function (part) {
+        var active = part.id === activeId;
+        return (
+          '<button class="toc-tab" type="button" role="tab" id="tab-' + esc(part.id) + '"' +
+          ' aria-selected="' + (active ? "true" : "false") + '" aria-controls="tocBody"' +
+          ' tabindex="' + (active ? "0" : "-1") + '" data-part="' + esc(part.id) + '">' +
+          '<span class="toc-tab-name">' + esc(part.name) + "</span>" +
+          '<span class="toc-tab-count">' + part.chapters.length + " 章</span>" +
+          "</button>"
+        );
+      })
+      .join("");
+  }
+
+  function renderActivePart(fade) {
+    var lec = state.lecture ? DATA.lectures[state.lecture] : null;
+    if (!lec) return;
+    var part = partById(lec, state.part);
+    state.part = part.id;
+    tocBody.innerHTML = renderPart(lec, part);
+    tocBody.setAttribute("role", "tabpanel");
+    tocBody.setAttribute("aria-labelledby", "tab-" + part.id);
+    syncToggleAll();
+    if (fade !== false) playEnter();
   }
 
   function onHeightDone(event) {
@@ -179,11 +200,14 @@
     tocBody.classList.add("is-enter");
   }
 
-  function selectLecture(id) {
+  function selectLecture(id, partId) {
     var lec = DATA.lectures[id];
     if (!lec) return;
 
     state.lecture = id;
+    var part = partById(lec, partId);
+    state.part = part.id;
+
     cards.forEach(function (card) {
       var on = card.getAttribute("data-lecture") === id;
       card.classList.toggle("is-selected", on);
@@ -192,15 +216,14 @@
 
     var t = totals(lec);
     tocHead.hidden = false;
+    tocTabs.hidden = false;
     tocName.textContent = lec.name;
     tocMeta.textContent =
       t.parts + " 部分 · " + t.chapters + " 章 · " + t.sections + " 节 · 共 " + t.pages + " 页";
-    tocBody.innerHTML = render(lec);
-    syncToggleAll();
-    playEnter();
+    tocTabs.innerHTML = renderTabs(lec, part.id);
+    renderActivePart(true);
 
-    live.textContent =
-      "已展开" + lec.name + "目录，共 " + t.chapters + " 章、" + t.sections + " 节";
+    live.textContent = "已展开" + lec.name + "目录，当前 " + part.name + "，共 " + part.chapters.length + " 章";
 
     var rect = tocPanel.getBoundingClientRect();
     var offscreen = rect.top > window.innerHeight * 0.58;
@@ -211,13 +234,54 @@
 
   function clearLecture() {
     state.lecture = null;
+    state.part = null;
     cards.forEach(function (card) {
       card.classList.remove("is-selected");
       card.setAttribute("aria-expanded", "false");
     });
     tocHead.hidden = true;
+    tocTabs.hidden = true;
+    tocTabs.innerHTML = "";
+    tocBody.removeAttribute("role");
+    tocBody.removeAttribute("aria-labelledby");
     tocBody.innerHTML = EMPTY_HTML;
     live.textContent = "已收起目录";
+  }
+
+  function activatePart(partId) {
+    var lec = state.lecture ? DATA.lectures[state.lecture] : null;
+    if (!lec || !partId) return;
+    var part = partById(lec, partId);
+    state.part = part.id;
+    Array.prototype.forEach.call(tocTabs.querySelectorAll(".toc-tab"), function (tab) {
+      var active = tab.getAttribute("data-part") === part.id;
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+      tab.setAttribute("tabindex", active ? "0" : "-1");
+    });
+    renderActivePart(true);
+    live.textContent = "已切换到" + part.name + "目录，共 " + part.chapters.length + " 章";
+  }
+
+  if (tocTabs) {
+    tocTabs.addEventListener("click", function (event) {
+      var tab = event.target.closest ? event.target.closest(".toc-tab") : null;
+      if (!tab) return;
+      activatePart(tab.getAttribute("data-part"));
+    });
+    tocTabs.addEventListener("keydown", function (event) {
+      var tabs = Array.prototype.slice.call(tocTabs.querySelectorAll(".toc-tab"));
+      var current = tabs.indexOf(document.activeElement);
+      if (current < 0) return;
+      var next = null;
+      if (event.key === "ArrowRight") next = (current + 1) % tabs.length;
+      else if (event.key === "ArrowLeft") next = (current - 1 + tabs.length) % tabs.length;
+      else if (event.key === "Home") next = 0;
+      else if (event.key === "End") next = tabs.length - 1;
+      if (next === null) return;
+      event.preventDefault();
+      tabs[next].focus();
+      activatePart(tabs[next].getAttribute("data-part"));
+    });
   }
 
   cards.forEach(function (card) {
@@ -256,7 +320,7 @@
     var params = new URLSearchParams(window.location.search);
     var initial = params.get("lecture");
     if (initial && DATA.lectures[initial]) {
-      selectLecture(initial);
+      selectLecture(initial, params.get("part") || undefined);
       if (params.get("all") === "1") setAllOpen(true);
     }
   } catch (err) {

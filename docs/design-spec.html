@@ -744,7 +744,7 @@
         </li>
         <li>
           <span class="n" aria-hidden="true">03</span>
-          <div><strong>直达页码</strong><p>章 → 节两级展开，点击小节打开 PDF 对应阅读器页码。</p></div>
+          <div><strong>直达页码</strong><p>讲义 → 科目 → 章 → 节，点击小节打开 PDF 对应阅读器页码。</p></div>
         </li>
       </ul>
       <div class="hero-meta" aria-label="交付信息">
@@ -778,7 +778,7 @@
         <h3>解决什么问题</h3>
         <ul class="bullets">
           <li><strong>入口分散：</strong>把每日计划、口诀题库、工具面板、GitHub 四个常用去处固定在首屏，不必翻聊天记录或收藏夹。</li>
-          <li><strong>PDF 书签不好用：</strong>把 9 册 PDF 的书签重排成“部分 → 章 → 节”的统一目录，支持单章展开与全部展开。</li>
+          <li><strong>PDF 书签不好用：</strong>把 9 册 PDF 的书签重排成“讲义 → 科目 → 章 → 节”的统一目录：先选讲义，再选科目（生理 / 病理 / 内科 / 外科 / 生化、内科 / 外科 / 基础学科），只看当前科目的章节，支持单章展开与全部展开。</li>
           <li><strong>页码查找成本高：</strong>每个小节生成「该页所在 PDF 分块 + <code>#page=</code>」的直达链接，新标签打开即定位到对应阅读器页码。</li>
           <li><strong>分享复习位置麻烦：</strong>支持 <code>?lecture=xizong</code> 深链接，把“打开哪套讲义”预先写进 URL，必要时加 <code>&amp;all=1</code> 直接全展开。</li>
         </ul>
@@ -1133,6 +1133,23 @@
             <td><span class="state state-hover">按下</span></td>
             <td>上移量收回到 1px，形成轻微的“按下”反馈。</td>
             <td><code>.link-card:active { transform: translateY(-1px); }</code></td>
+          </tr>
+
+          <tr>
+            <th scope="row" rowspan="3" class="comp-name">科目切换<span class="comp-sub">.toc-tab</span></th>
+            <td><span class="state state-default">默认</span></td>
+            <td>目录头部下方一排胶囊标签：科目名 + 章数（如「生理学 12 章」），默认选中该讲义第一个科目。</td>
+            <td><code>.toc-tab</code> 圆角 999px、12.5px/600；<code>role="tablist"</code> + <code>aria-selected</code>，左右方向键 / Home / End 切换。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-hover">悬停</span></td>
+            <td>边框转 #BFD7FE、底色浅蓝、文字转深蓝，整体上移 1px。</td>
+            <td><code>.toc-tab:hover</code>；未选中态保持白底，避免与选中态抢视觉。</td>
+          </tr>
+          <tr>
+            <td><span class="state state-active">选中</span></td>
+            <td>蓝色渐变填充、文字反白、章数淡出为 85% 白色，带轻投影。</td>
+            <td><code>.toc-tab[aria-selected="true"]</code>；切换后只渲染该科目章节，序号从 01 重新计数，展开状态重置。</td>
           </tr>
 
           <tr>

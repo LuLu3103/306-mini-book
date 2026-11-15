@@ -591,259 +591,6 @@ window.TOC_DATA = {
      ]
     },
     {
-     "id": "shenghua",
-     "name": "生物化学",
-     "file": "pdf/xizong-biochem.pdf",
-     "src": "西综讲义PDF\\biochem.pdf",
-     "pages": 170,
-     "chapters": [
-      {
-       "title": "物质代谢",
-       "page": 3,
-       "sections": [
-        {
-         "title": "1.糖无氧氧化&糖有氧氧化",
-         "page": 3,
-         "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
-         "srcPage": 3,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 6680829
-        },
-        {
-         "title": "串·红细胞代谢&高能化合物",
-         "page": 9,
-         "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
-         "srcPage": 9,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 6680829
-        },
-        {
-         "title": "2.磷酸戊糖途径、糖原、糖异生",
-         "page": 13,
-         "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
-         "srcPage": 13,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 6680829
-        },
-        {
-         "title": "串·糖代谢小结",
-         "page": 15,
-         "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
-         "srcPage": 15,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 6680829
-        },
-        {
-         "title": "3.氧化磷酸化",
-         "page": 2,
-         "file": "pdf/chunks/xizong-biochem-02-19311529.pdf",
-         "srcPage": 19,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 4100066
-        },
-        {
-         "title": "串·葡萄糖有氧氧化的能量计算",
-         "page": 7,
-         "file": "pdf/chunks/xizong-biochem-02-19311529.pdf",
-         "srcPage": 24,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 4100066
-        },
-        {
-         "title": "4.血浆脂蛋白",
-         "page": 10,
-         "file": "pdf/chunks/xizong-biochem-02-19311529.pdf",
-         "srcPage": 27,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 4100066
-        },
-        {
-         "title": "5.磷脂代谢、胆固醇代谢和胆汁酸",
-         "page": 14,
-         "file": "pdf/chunks/xizong-biochem-02-19311529.pdf",
-         "srcPage": 31,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 4100066
-        },
-        {
-         "title": "6.脂肪代谢",
-         "page": 2,
-         "file": "pdf/chunks/xizong-biochem-03-cd4fd779.pdf",
-         "srcPage": 36,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 8176912
-        },
-        {
-         "title": "7.氨基酸代谢",
-         "page": 11,
-         "file": "pdf/chunks/xizong-biochem-03-cd4fd779.pdf",
-         "srcPage": 45,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 8176912
-        },
-        {
-         "title": "串·氨基酸（见思维导图氨基酸）",
-         "page": 16,
-         "file": "pdf/chunks/xizong-biochem-03-cd4fd779.pdf",
-         "srcPage": 50,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 8176912
-        },
-        {
-         "title": "8.蛋白质",
-         "page": 8,
-         "file": "pdf/chunks/xizong-biochem-04-3bc1d9d5.pdf",
-         "srcPage": 59,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 9785938
-        },
-        {
-         "title": "9.核苷酸代谢",
-         "page": 15,
-         "file": "pdf/chunks/xizong-biochem-04-3bc1d9d5.pdf",
-         "srcPage": 66,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 9785938
-        },
-        {
-         "title": "串·核苷酸抗代谢物",
-         "page": 3,
-         "file": "pdf/chunks/xizong-biochem-05-b63e40d7.pdf",
-         "srcPage": 71,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 7396623
-        },
-        {
-         "title": "10.胆色素代谢",
-         "page": 7,
-         "file": "pdf/chunks/xizong-biochem-05-b63e40d7.pdf",
-         "srcPage": 75,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 7396623
-        },
-        {
-         "title": "11.生物转化",
-         "page": 11,
-         "file": "pdf/chunks/xizong-biochem-05-b63e40d7.pdf",
-         "srcPage": 79,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 7396623
-        },
-        {
-         "title": "12.酶",
-         "page": 13,
-         "file": "pdf/chunks/xizong-biochem-05-b63e40d7.pdf",
-         "srcPage": 81,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 7396623
-        },
-        {
-         "title": "串·酶在医学上的作用",
-         "page": 4,
-         "file": "pdf/chunks/xizong-biochem-06-34478f06.pdf",
-         "srcPage": 89,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 11356952
-        },
-        {
-         "title": "13.维生素",
-         "page": 5,
-         "file": "pdf/chunks/xizong-biochem-06-34478f06.pdf",
-         "srcPage": 90,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 11356952
-        }
-       ],
-       "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
-       "srcPage": 3,
-       "srcFile": "pdf/xizong-biochem.pdf",
-       "bytes": 6680829
-      },
-      {
-       "title": "分子生物学与基因表达",
-       "page": 8,
-       "sections": [
-        {
-         "title": "1. 原癌基因&抑癌基因、基因重组、分子生物学技术",
-         "page": 8,
-         "file": "pdf/chunks/xizong-biochem-06-34478f06.pdf",
-         "srcPage": 93,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 11356952
-        },
-        {
-         "title": "2.核酸",
-         "page": 3,
-         "file": "pdf/chunks/xizong-biochem-07-dfc5ec1e.pdf",
-         "srcPage": 105,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 4985473
-        },
-        {
-         "title": "3.DNA的合成",
-         "page": 13,
-         "file": "pdf/chunks/xizong-biochem-07-dfc5ec1e.pdf",
-         "srcPage": 115,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 4985473
-        },
-        {
-         "title": "串·DNA复制VS转录",
-         "page": 9,
-         "file": "pdf/chunks/xizong-biochem-08-4ba0cac2.pdf",
-         "srcPage": 128,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 3046202
-        },
-        {
-         "title": "4.转录",
-         "page": 9,
-         "file": "pdf/chunks/xizong-biochem-08-4ba0cac2.pdf",
-         "srcPage": 128,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 3046202
-        },
-        {
-         "title": "5.翻译",
-         "page": 3,
-         "file": "pdf/chunks/xizong-biochem-09-44d7d8a0.pdf",
-         "srcPage": 139,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 4666606
-        },
-        {
-         "title": "6.基因表达的调控",
-         "page": 15,
-         "file": "pdf/chunks/xizong-biochem-09-44d7d8a0.pdf",
-         "srcPage": 151,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 4666606
-        },
-        {
-         "title": "7.真核基因",
-         "page": 12,
-         "file": "pdf/chunks/xizong-biochem-10-e6a40b04.pdf",
-         "srcPage": 165,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 7760117
-        },
-        {
-         "title": "8.DNA损伤",
-         "page": 15,
-         "file": "pdf/chunks/xizong-biochem-10-e6a40b04.pdf",
-         "srcPage": 168,
-         "srcFile": "pdf/xizong-biochem.pdf",
-         "bytes": 7760117
-        }
-       ],
-       "file": "pdf/chunks/xizong-biochem-06-34478f06.pdf",
-       "srcPage": 93,
-       "srcFile": "pdf/xizong-biochem.pdf",
-       "bytes": 11356952
-      }
-     ]
-    },
-    {
      "id": "bingli",
      "name": "病理学",
      "file": "pdf/xizong-pathology.pdf",
@@ -2366,6 +2113,259 @@ window.TOC_DATA = {
        "bytes": 6890993
       }
      ]
+    },
+    {
+     "id": "shenghua",
+     "name": "生物化学",
+     "file": "pdf/xizong-biochem.pdf",
+     "src": "西综讲义PDF\\biochem.pdf",
+     "pages": 170,
+     "chapters": [
+      {
+       "title": "物质代谢",
+       "page": 3,
+       "sections": [
+        {
+         "title": "1.糖无氧氧化&糖有氧氧化",
+         "page": 3,
+         "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
+         "srcPage": 3,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 6680829
+        },
+        {
+         "title": "串·红细胞代谢&高能化合物",
+         "page": 9,
+         "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
+         "srcPage": 9,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 6680829
+        },
+        {
+         "title": "2.磷酸戊糖途径、糖原、糖异生",
+         "page": 13,
+         "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
+         "srcPage": 13,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 6680829
+        },
+        {
+         "title": "串·糖代谢小结",
+         "page": 15,
+         "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
+         "srcPage": 15,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 6680829
+        },
+        {
+         "title": "3.氧化磷酸化",
+         "page": 2,
+         "file": "pdf/chunks/xizong-biochem-02-19311529.pdf",
+         "srcPage": 19,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 4100066
+        },
+        {
+         "title": "串·葡萄糖有氧氧化的能量计算",
+         "page": 7,
+         "file": "pdf/chunks/xizong-biochem-02-19311529.pdf",
+         "srcPage": 24,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 4100066
+        },
+        {
+         "title": "4.血浆脂蛋白",
+         "page": 10,
+         "file": "pdf/chunks/xizong-biochem-02-19311529.pdf",
+         "srcPage": 27,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 4100066
+        },
+        {
+         "title": "5.磷脂代谢、胆固醇代谢和胆汁酸",
+         "page": 14,
+         "file": "pdf/chunks/xizong-biochem-02-19311529.pdf",
+         "srcPage": 31,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 4100066
+        },
+        {
+         "title": "6.脂肪代谢",
+         "page": 2,
+         "file": "pdf/chunks/xizong-biochem-03-cd4fd779.pdf",
+         "srcPage": 36,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 8176912
+        },
+        {
+         "title": "7.氨基酸代谢",
+         "page": 11,
+         "file": "pdf/chunks/xizong-biochem-03-cd4fd779.pdf",
+         "srcPage": 45,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 8176912
+        },
+        {
+         "title": "串·氨基酸（见思维导图氨基酸）",
+         "page": 16,
+         "file": "pdf/chunks/xizong-biochem-03-cd4fd779.pdf",
+         "srcPage": 50,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 8176912
+        },
+        {
+         "title": "8.蛋白质",
+         "page": 8,
+         "file": "pdf/chunks/xizong-biochem-04-3bc1d9d5.pdf",
+         "srcPage": 59,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 9785938
+        },
+        {
+         "title": "9.核苷酸代谢",
+         "page": 15,
+         "file": "pdf/chunks/xizong-biochem-04-3bc1d9d5.pdf",
+         "srcPage": 66,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 9785938
+        },
+        {
+         "title": "串·核苷酸抗代谢物",
+         "page": 3,
+         "file": "pdf/chunks/xizong-biochem-05-b63e40d7.pdf",
+         "srcPage": 71,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 7396623
+        },
+        {
+         "title": "10.胆色素代谢",
+         "page": 7,
+         "file": "pdf/chunks/xizong-biochem-05-b63e40d7.pdf",
+         "srcPage": 75,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 7396623
+        },
+        {
+         "title": "11.生物转化",
+         "page": 11,
+         "file": "pdf/chunks/xizong-biochem-05-b63e40d7.pdf",
+         "srcPage": 79,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 7396623
+        },
+        {
+         "title": "12.酶",
+         "page": 13,
+         "file": "pdf/chunks/xizong-biochem-05-b63e40d7.pdf",
+         "srcPage": 81,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 7396623
+        },
+        {
+         "title": "串·酶在医学上的作用",
+         "page": 4,
+         "file": "pdf/chunks/xizong-biochem-06-34478f06.pdf",
+         "srcPage": 89,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 11356952
+        },
+        {
+         "title": "13.维生素",
+         "page": 5,
+         "file": "pdf/chunks/xizong-biochem-06-34478f06.pdf",
+         "srcPage": 90,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 11356952
+        }
+       ],
+       "file": "pdf/chunks/xizong-biochem-01-932ca3f9.pdf",
+       "srcPage": 3,
+       "srcFile": "pdf/xizong-biochem.pdf",
+       "bytes": 6680829
+      },
+      {
+       "title": "分子生物学与基因表达",
+       "page": 8,
+       "sections": [
+        {
+         "title": "1. 原癌基因&抑癌基因、基因重组、分子生物学技术",
+         "page": 8,
+         "file": "pdf/chunks/xizong-biochem-06-34478f06.pdf",
+         "srcPage": 93,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 11356952
+        },
+        {
+         "title": "2.核酸",
+         "page": 3,
+         "file": "pdf/chunks/xizong-biochem-07-dfc5ec1e.pdf",
+         "srcPage": 105,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 4985473
+        },
+        {
+         "title": "3.DNA的合成",
+         "page": 13,
+         "file": "pdf/chunks/xizong-biochem-07-dfc5ec1e.pdf",
+         "srcPage": 115,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 4985473
+        },
+        {
+         "title": "串·DNA复制VS转录",
+         "page": 9,
+         "file": "pdf/chunks/xizong-biochem-08-4ba0cac2.pdf",
+         "srcPage": 128,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 3046202
+        },
+        {
+         "title": "4.转录",
+         "page": 9,
+         "file": "pdf/chunks/xizong-biochem-08-4ba0cac2.pdf",
+         "srcPage": 128,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 3046202
+        },
+        {
+         "title": "5.翻译",
+         "page": 3,
+         "file": "pdf/chunks/xizong-biochem-09-44d7d8a0.pdf",
+         "srcPage": 139,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 4666606
+        },
+        {
+         "title": "6.基因表达的调控",
+         "page": 15,
+         "file": "pdf/chunks/xizong-biochem-09-44d7d8a0.pdf",
+         "srcPage": 151,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 4666606
+        },
+        {
+         "title": "7.真核基因",
+         "page": 12,
+         "file": "pdf/chunks/xizong-biochem-10-e6a40b04.pdf",
+         "srcPage": 165,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 7760117
+        },
+        {
+         "title": "8.DNA损伤",
+         "page": 15,
+         "file": "pdf/chunks/xizong-biochem-10-e6a40b04.pdf",
+         "srcPage": 168,
+         "srcFile": "pdf/xizong-biochem.pdf",
+         "bytes": 7760117
+        }
+       ],
+       "file": "pdf/chunks/xizong-biochem-06-34478f06.pdf",
+       "srcPage": 93,
+       "srcFile": "pdf/xizong-biochem.pdf",
+       "bytes": 11356952
+      }
+     ]
     }
    ]
   },
@@ -3121,413 +3121,6 @@ window.TOC_DATA = {
      ]
     },
     {
-     "id": "kb-jichu",
-     "name": "基础学科横向大串联",
-     "file": "pdf/kb-jichu.pdf",
-     "src": "狂背讲义PDF\\狂背【基础学科横向大串联】.pdf",
-     "pages": 49,
-     "chapters": [
-      {
-       "title": "生物化学",
-       "page": 2,
-       "sections": [
-        {
-         "title": "生物化学循环大串讲",
-         "page": 2,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 2,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生物化学物质代谢的酶大串讲",
-         "page": 4,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 4,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "相似酶辨析",
-         "page": 6,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 6,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "参与氧化脱羧（脱氢+脱羧）",
-         "page": 8,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 8,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "酶的抑制剂",
-         "page": 8,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 8,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生物化学代谢部位小结 & 肝中主要代谢途径大串讲",
-         "page": 9,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 9,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生物化学维生素大串讲",
-         "page": 10,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 10,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生物化学基因大串讲",
-         "page": 11,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 11,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "序列小结",
-         "page": 12,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 12,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生物化学能量小结",
-         "page": 13,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 13,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生物化学各种化小结",
-         "page": 14,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 14,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生物化学甘氨酸大串讲",
-         "page": 15,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 15,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        }
-       ],
-       "file": "pdf/kb-jichu.pdf",
-       "srcPage": 2,
-       "srcFile": "pdf/kb-jichu.pdf",
-       "bytes": 3431874
-      },
-      {
-       "title": "病理学",
-       "page": 17,
-       "sections": [
-        {
-         "title": "病理学常考好发部位",
-         "page": 17,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 17,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "病理学常考最字题",
-         "page": 18,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 18,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "病理学常考重要细胞",
-         "page": 20,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 20,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "病理学常考重要小体",
-         "page": 21,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 21,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "常考溃疡",
-         "page": 22,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 22,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        }
-       ],
-       "file": "pdf/kb-jichu.pdf",
-       "srcPage": 17,
-       "srcFile": "pdf/kb-jichu.pdf",
-       "bytes": 3431874
-      },
-      {
-       "title": "生理学",
-       "page": 23,
-       "sections": [
-        {
-         "title": "生理学中枢小结",
-         "page": 23,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 23,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学自身调节小结",
-         "page": 25,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 25,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学跨膜转运对比",
-         "page": 25,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 25,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学钾失衡对横纹肌的影响",
-         "page": 26,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 26,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学神经-肌接头和兴奋-收缩耦联小结",
-         "page": 26,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 26,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学&生物化学细胞信号转导小结",
-         "page": 27,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 27,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学凝血、抗板、抗凝、溶栓小结",
-         "page": 28,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 28,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学心室压力-容积环",
-         "page": 29,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 29,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学静脉回心血量的影响因素大串讲",
-         "page": 30,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 30,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学横纹肌大串讲",
-         "page": 31,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 31,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学RAAS",
-         "page": 32,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 32,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学肺通气大串讲",
-         "page": 34,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 34,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学CO中毒大串讲",
-         "page": 35,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 35,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学化学性消化和机械性消化小结",
-         "page": 36,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 36,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学三种常考的胃肠激素小结",
-         "page": 36,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 36,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学能量代谢和体温",
-         "page": 37,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 37,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学肾小球滤过的影响因素",
-         "page": 38,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 38,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学使肾浓缩功能的因素举例",
-         "page": 39,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 39,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学利尿剂小结",
-         "page": 39,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 39,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学视锥细胞 VS 视杆细胞",
-         "page": 40,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 40,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学听觉小结",
-         "page": 40,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 40,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学化学突触传递的影响因素小结",
-         "page": 41,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 41,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学突触前抑制 VS 突触后抑制",
-         "page": 41,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 41,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学交感神经兴奋大串讲",
-         "page": 42,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 42,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学受体介导的效应大串讲",
-         "page": 42,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 42,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学牵张反射",
-         "page": 43,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 43,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学肌紧张大串讲",
-         "page": 44,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 44,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学激素主要来源大串讲",
-         "page": 45,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 45,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        },
-        {
-         "title": "生理学激素作用大串讲",
-         "page": 48,
-         "file": "pdf/kb-jichu.pdf",
-         "srcPage": 48,
-         "srcFile": "pdf/kb-jichu.pdf",
-         "bytes": 3431874
-        }
-       ],
-       "file": "pdf/kb-jichu.pdf",
-       "srcPage": 23,
-       "srcFile": "pdf/kb-jichu.pdf",
-       "bytes": 3431874
-      }
-     ]
-    },
-    {
      "id": "kb-waike",
      "name": "外科+横向大串联",
      "file": "pdf/kb-waike.pdf",
@@ -4027,6 +3620,413 @@ window.TOC_DATA = {
        "srcPage": 42,
        "srcFile": "pdf/kb-waike.pdf",
        "bytes": 4494902
+      }
+     ]
+    },
+    {
+     "id": "kb-jichu",
+     "name": "基础学科横向大串联",
+     "file": "pdf/kb-jichu.pdf",
+     "src": "狂背讲义PDF\\狂背【基础学科横向大串联】.pdf",
+     "pages": 49,
+     "chapters": [
+      {
+       "title": "生物化学",
+       "page": 2,
+       "sections": [
+        {
+         "title": "生物化学循环大串讲",
+         "page": 2,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 2,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生物化学物质代谢的酶大串讲",
+         "page": 4,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 4,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "相似酶辨析",
+         "page": 6,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 6,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "参与氧化脱羧（脱氢+脱羧）",
+         "page": 8,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 8,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "酶的抑制剂",
+         "page": 8,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 8,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生物化学代谢部位小结 & 肝中主要代谢途径大串讲",
+         "page": 9,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 9,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生物化学维生素大串讲",
+         "page": 10,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 10,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生物化学基因大串讲",
+         "page": 11,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 11,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "序列小结",
+         "page": 12,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 12,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生物化学能量小结",
+         "page": 13,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 13,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生物化学各种化小结",
+         "page": 14,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 14,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生物化学甘氨酸大串讲",
+         "page": 15,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 15,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        }
+       ],
+       "file": "pdf/kb-jichu.pdf",
+       "srcPage": 2,
+       "srcFile": "pdf/kb-jichu.pdf",
+       "bytes": 3431874
+      },
+      {
+       "title": "病理学",
+       "page": 17,
+       "sections": [
+        {
+         "title": "病理学常考好发部位",
+         "page": 17,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 17,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "病理学常考最字题",
+         "page": 18,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 18,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "病理学常考重要细胞",
+         "page": 20,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 20,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "病理学常考重要小体",
+         "page": 21,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 21,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "常考溃疡",
+         "page": 22,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 22,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        }
+       ],
+       "file": "pdf/kb-jichu.pdf",
+       "srcPage": 17,
+       "srcFile": "pdf/kb-jichu.pdf",
+       "bytes": 3431874
+      },
+      {
+       "title": "生理学",
+       "page": 23,
+       "sections": [
+        {
+         "title": "生理学中枢小结",
+         "page": 23,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 23,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学自身调节小结",
+         "page": 25,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 25,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学跨膜转运对比",
+         "page": 25,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 25,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学钾失衡对横纹肌的影响",
+         "page": 26,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 26,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学神经-肌接头和兴奋-收缩耦联小结",
+         "page": 26,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 26,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学&生物化学细胞信号转导小结",
+         "page": 27,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 27,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学凝血、抗板、抗凝、溶栓小结",
+         "page": 28,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 28,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学心室压力-容积环",
+         "page": 29,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 29,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学静脉回心血量的影响因素大串讲",
+         "page": 30,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 30,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学横纹肌大串讲",
+         "page": 31,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 31,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学RAAS",
+         "page": 32,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 32,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学肺通气大串讲",
+         "page": 34,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 34,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学CO中毒大串讲",
+         "page": 35,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 35,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学化学性消化和机械性消化小结",
+         "page": 36,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 36,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学三种常考的胃肠激素小结",
+         "page": 36,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 36,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学能量代谢和体温",
+         "page": 37,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 37,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学肾小球滤过的影响因素",
+         "page": 38,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 38,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学使肾浓缩功能的因素举例",
+         "page": 39,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 39,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学利尿剂小结",
+         "page": 39,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 39,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学视锥细胞 VS 视杆细胞",
+         "page": 40,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 40,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学听觉小结",
+         "page": 40,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 40,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学化学突触传递的影响因素小结",
+         "page": 41,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 41,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学突触前抑制 VS 突触后抑制",
+         "page": 41,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 41,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学交感神经兴奋大串讲",
+         "page": 42,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 42,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学受体介导的效应大串讲",
+         "page": 42,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 42,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学牵张反射",
+         "page": 43,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 43,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学肌紧张大串讲",
+         "page": 44,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 44,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学激素主要来源大串讲",
+         "page": 45,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 45,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        },
+        {
+         "title": "生理学激素作用大串讲",
+         "page": 48,
+         "file": "pdf/kb-jichu.pdf",
+         "srcPage": 48,
+         "srcFile": "pdf/kb-jichu.pdf",
+         "bytes": 3431874
+        }
+       ],
+       "file": "pdf/kb-jichu.pdf",
+       "srcPage": 23,
+       "srcFile": "pdf/kb-jichu.pdf",
+       "bytes": 3431874
       }
      ]
     }
