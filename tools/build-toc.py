@@ -5,8 +5,50 @@ from pypdf import PdfReader
 
 HERE = os.path.dirname(os.path.abspath(__file__))     # 306-mini-book/tools
 SITE = os.path.dirname(HERE)                            # 306-mini-book
-SRC = os.path.join(os.path.dirname(SITE), "原始资料")    # 工作区/原始资料
+
+
+def find_src_root(site):
+    """定位「原始资料」目录：优先环境变量 TOC_SRC，其次自动探测常见位置。"""
+    env = os.environ.get("TOC_SRC")
+    if env:
+        if os.path.isdir(env):
+            return os.path.abspath(env)
+        raise SystemExit("TOC_SRC 指向的目录不存在：" + env)
+
+    parent = os.path.dirname(site)
+    grand = os.path.dirname(parent)
+    candidates = [
+        os.path.join(parent, "原始资料"),
+        os.path.join(parent, "medical study", "原始资料"),
+        os.path.join(grand, "原始资料"),
+        os.path.join(grand, "medical study", "原始资料"),
+        os.path.join(site, "原始资料"),
+    ]
+    for path in candidates:
+        if os.path.isdir(os.path.join(path, "西综讲义PDF")):
+            return os.path.abspath(path)
+
+    # 兜底：在父级/祖父级目录的下一层里找名字像“原始资料”的目录
+    for base in (parent, grand):
+        if not os.path.isdir(base):
+            continue
+        try:
+            entries = os.listdir(base)
+        except OSError:
+            continue
+        for name in entries:
+            path = os.path.join(base, name, "原始资料")
+            if os.path.isdir(os.path.join(path, "西综讲义PDF")):
+                return os.path.abspath(path)
+
+    raise SystemExit(
+        "找不到「原始资料」目录。请把原始 PDF 放在站点同级目录，"
+        "或设置环境变量 TOC_SRC 指向该目录后重试。"
+    )
+
+SRC = find_src_root(SITE)                               # 自动定位「原始资料」
 OUT = os.path.join(SITE, "assets", "data", "toc.json")
+print("原始资料目录:", SRC)
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 bad = re.compile(r"[^\u0020-\u007e\u3000-\u303f\u4e00-\u9fff\uff00-\uffef\n]")
 def clean(s): return bad.sub("", s or "")
@@ -86,12 +128,13 @@ for c in phys_chs:
     if c["page"] < 1 and c["sections"]: c["page"] = c["sections"][0]["page"]
 phys_chs = [{"title": c["title"], "page": c["page"], "sections": [s for s in c["sections"] if s["page"] >= 1]} for c in phys_chs]
 
+# 顺序即站点上「科目标签」的显示顺序：生理 → 病理 → 内科 → 外科 → 生化
 XZ = [
     ("shengli", "生理学", "physiology.pdf", "xizong-physiology.pdf", 383),
-    ("shenghua", "生物化学", "biochem.pdf", "xizong-biochem.pdf", 170),
     ("bingli", "病理学", "pathology.pdf", "xizong-pathology.pdf", 195),
     ("neike", "内科学", "internal.pdf", "xizong-internal.pdf", 397),
     ("waike", "外科学", "surgery1.pdf", "xizong-surgery1.pdf", 143),
+    ("shenghua", "生物化学", "biochem.pdf", "xizong-biochem.pdf", 170),
 ]
 parts_xz = []
 for pid, name, src, fn, npg in XZ:
@@ -110,25 +153,30 @@ for pid, name, src, fn, npg in XZ:
         for s in c["sections"]: s["file"] = "pdf/" + fn
     parts_xz.append({"id": pid, "name": name, "file": "pdf/" + fn, "src": os.path.join("西综讲义PDF", src), "pages": npg, "chapters": chs})
 
-# 合并 surgery2
+# 合并 surgery2（外科学由 surgery1 + surgery2 两册拼成，按 id 定位，避免依赖列表下标）
+waike_part = next((p for p in parts_xz if p["id"] == "waike"), None)
 r2 = op(r"西综讲义PDF\surgery2.pdf")
 for c in outline_chapters(r2):
     for s in c["sections"]: s["file"] = "pdf/xizong-surgery2.pdf"
     base = re.sub(r"^[一二三四五六七八九十]+、", "", c["title"]).strip()
     tgt = None
-    for c0 in parts_xz[4]["chapters"]:
-        if re.sub(r"^[一二三四五六七八九十]+、", "", c0["title"]).strip() == base: tgt = c0; break
-    if tgt: tgt["sections"].extend(c["sections"])
-    else: parts_xz[4]["chapters"].append({"title": c["title"], "page": c["page"], "file": "pdf/xizong-surgery2.pdf", "sections": c["sections"]})
+    if waike_part is not None:
+        for c0 in waike_part["chapters"]:
+            if re.sub(r"^[一二三四五六七八九十]+、", "", c0["title"]).strip() == base: tgt = c0; break
+    if tgt is not None:
+        tgt["sections"].extend(c["sections"])
+    elif waike_part is not None:
+        waike_part["chapters"].append({"title": c["title"], "page": c["page"], "file": "pdf/xizong-surgery2.pdf", "sections": c["sections"]})
 order = {"pdf/xizong-surgery1.pdf": 0, "pdf/xizong-surgery2.pdf": 1}
 for p in parts_xz:
     for c in p["chapters"]:
         c["sections"].sort(key=lambda s: (order.get(s.get("file", ""), 0), s["page"]))
 
+# 顺序即站点上「科目标签」的显示顺序：内科 → 外科 → 基础学科
 KB = [
     ("kb-neike", "内科（含诊断+部分外科）", "狂背【内科含诊断+部分外科】.pdf", "pdf/kb-neike.pdf", 73),
-    ("kb-jichu", "基础学科横向大串联", "狂背【基础学科横向大串联】.pdf", "pdf/kb-jichu.pdf", 49),
     ("kb-waike", "外科+横向大串联", "狂背【外科+横向大串联 】.pdf", "pdf/kb-waike.pdf", 61),
+    ("kb-jichu", "基础学科横向大串联", "狂背【基础学科横向大串联】.pdf", "pdf/kb-jichu.pdf", 49),
 ]
 SUBJ = ("生物化学", "病理学", "生理学")
 KCH = re.compile(r"^([一二三四五六七八九十]+)、\s*(.+)$")
@@ -207,11 +255,6 @@ for lid, L in data["lectures"].items():
             for s in c["sections"]:
                 if not (1 <= s["page"] <= p["pages"]): errs.append(f"{p['name']} 节页码越界 {s['title']} p{s['page']}")
     rep.append(f"== {lid} 合计 {len(L['parts'])}部分 {tc}章 {ts}节 {tpg}页")
-# 同步生成页面实际读取的 toc.js（file:// 双击也能用）
-with open(os.path.join(SITE, "assets", "data", "toc.js"), "w", encoding="utf-8") as f:
-    f.write("/* 自动生成：不要手改，源文件 toc.json */\nwindow.TOC_DATA = ")
-    json.dump(data, f, ensure_ascii=False, indent=1)
-    f.write(";\n")
-
 print("\n".join(rep + ["", "ERRORS:"] + errs))
 print("OK", os.path.getsize(OUT))
+print("提示：toc.js 由 tools/build-web.py 生成（含分块映射），本脚本只写 toc.json")

@@ -129,7 +129,15 @@ python -m http.server 8099
 
 ## 维护：改目录 / 换 PDF
 
-需要 Python 3 与 `pypdf`（`pip install pypdf`），并且工作区里保留 `原始资料/` 下的原始 PDF。
+需要 Python 3 与 `pypdf`（`pip install pypdf`），并且保留 `原始资料/` 下的原始 PDF。
+
+脚本会自动查找 `原始资料` 目录（依次尝试：站点同级的 `原始资料/`、同级的 `medical study/原始资料/`、上一级的同名目录等）。如果放在其它位置，用环境变量指定即可：
+
+```bash
+TOC_SRC="D:/path/to/原始资料" python tools/build-web.py --check
+```
+
+`--check` 只解析路径并检查 9 个源 PDF 是否齐全，不写任何文件，适合换机器/挪目录后先自检。
 
 ```bash
 # 1) 从原始 PDF 重新抽取目录（书签 + 目录页）→ assets/data/toc.json

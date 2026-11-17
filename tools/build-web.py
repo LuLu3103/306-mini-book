@@ -10,14 +10,55 @@
 用法（在工作区根目录）：python 306-mini-book/tools/build-web.py
 依赖：pypdf
 """
-import io, json, os, glob, shutil, hashlib, logging
+import io, json, os, glob, shutil, sys, hashlib, logging
 
 logging.disable(logging.WARNING)
 from pypdf import PdfReader, PdfWriter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.dirname(HERE)
-SRCROOT = os.path.join(os.path.dirname(SITE), "原始资料")
+
+
+def find_src_root(site):
+    """定位「原始资料」目录：优先环境变量 TOC_SRC，其次自动探测常见位置。"""
+    env = os.environ.get("TOC_SRC")
+    if env:
+        if os.path.isdir(env):
+            return os.path.abspath(env)
+        raise SystemExit("TOC_SRC 指向的目录不存在：" + env)
+
+    parent = os.path.dirname(site)
+    grand = os.path.dirname(parent)
+    candidates = [
+        os.path.join(parent, "原始资料"),
+        os.path.join(parent, "medical study", "原始资料"),
+        os.path.join(grand, "原始资料"),
+        os.path.join(grand, "medical study", "原始资料"),
+        os.path.join(site, "原始资料"),
+    ]
+    for path in candidates:
+        if os.path.isdir(os.path.join(path, "西综讲义PDF")):
+            return os.path.abspath(path)
+
+    # 兜底：在父级/祖父级目录的下一层里找名字像“原始资料”的目录
+    for base in (parent, grand):
+        if not os.path.isdir(base):
+            continue
+        try:
+            entries = os.listdir(base)
+        except OSError:
+            continue
+        for name in entries:
+            path = os.path.join(base, name, "原始资料")
+            if os.path.isdir(os.path.join(path, "西综讲义PDF")):
+                return os.path.abspath(path)
+
+    raise SystemExit(
+        "找不到「原始资料」目录。请把原始 PDF 放在站点同级目录，"
+        "或设置环境变量 TOC_SRC 指向该目录后重试。"
+    )
+
+SRCROOT = find_src_root(SITE)
 PDFDIR = os.path.join(SITE, "pdf")
 CHUNKDIR = os.path.join(PDFDIR, "chunks")
 DATA = os.path.join(SITE, "assets", "data", "toc.json")
@@ -39,6 +80,21 @@ FILE_SOURCES = {
     "pdf/kb-jichu.pdf": "狂背讲义PDF/狂背【基础学科横向大串联】.pdf",
     "pdf/kb-waike.pdf": "狂背讲义PDF/狂背【外科+横向大串联 】.pdf",
 }
+
+print("原始资料目录:", SRCROOT)
+
+if "--check" in sys.argv:
+    missing = [
+        rel for rel in FILE_SOURCES.values()
+        if not os.path.exists(os.path.join(SRCROOT, rel.replace("/", os.sep)))
+    ]
+    if missing:
+        print("缺少源文件，请检查原始资料目录：")
+        for rel in missing:
+            print("  -", rel)
+        raise SystemExit(1)
+    print("源文件自检通过：", len(FILE_SOURCES), "个 PDF 全部存在")
+    raise SystemExit(0)
 
 os.makedirs(CHUNKDIR, exist_ok=True)
 keep = set()
